@@ -62,6 +62,16 @@
             android:layout_marginTop="18dp"
             />
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/googleSignInBtn"
+            android:layout_alignTop="@id/googleSignInBtn"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/google01"
+            />
+
         <Button
             android:id="@+id/googleSignInBtn"
             android:layout_width="wrap_content"
@@ -75,16 +85,6 @@
             android:textColor="@color/white"
             android:textAllCaps="false"/>
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@id/googleSignInBtn"
-            android:layout_alignTop="@id/googleSignInBtn"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/google01"
-            />
-
         <TextView
             android:id="@+id/register"
             android:layout_width="wrap_content"
@@ -94,22 +94,23 @@
             android:layout_centerHorizontal="true"
             android:paddingTop="13dp"
             android:textSize="10dp"
-            android:textColor="@color/purple_500"
-            android:alpha="0.6"
+            android:textColor="@color/CTA_purple"
+            android:alpha="0.8"
             android:clickable="true"
             />
 
-        <Button
-            android:id="@+id/adminloginbtn1"
-            android:layout_width="164dp"
-            android:layout_height="30dp"
-            android:background="@drawable/admin"
+        <TextView
+            android:id="@+id/goto_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_above="@id/holder"
             android:layout_alignRight="@id/holder"
             android:text="Go to Admin dashboard"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:alpha="0.7"
+            android:textColor="@color/CTA_purple"
+            android:alpha="0.8"
+            android:clickable="true"
             />
+
     </RelativeLayout>
 </RelativeLayout>

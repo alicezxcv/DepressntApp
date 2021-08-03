@@ -45,7 +45,7 @@
             android:background="@drawable/user"
             android:layout_below="@id/title"
             android:hint="Email"
-            android:textColorHint="@color/purple_200"
+            android:textColorHint="@color/white"
             android:textSize="12dp"
             android:paddingLeft="15dp"
             android:layout_marginTop="100dp"
@@ -59,7 +59,7 @@
             android:background="@drawable/pass"
             android:layout_below="@id/user"
             android:hint="Password"
-            android:textColorHint="@color/purple_200"
+            android:textColorHint="@color/white"
             android:textSize="12dp"
             android:paddingLeft="15dp"
             android:layout_marginTop="25dp"
@@ -78,18 +78,20 @@
             android:textColor="@color/white"
             />
 
-        <Button
-            android:id="@+id/userloginbtn"
-            android:layout_width="164dp"
-            android:layout_height="30dp"
-            android:background="@drawable/admin"
+
+        <TextView
+            android:id="@+id/goto_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_above="@id/holder"
             android:layout_alignLeft="@id/holder"
             android:text="Go to User dashboard"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:alpha="0.7"
+            android:alpha="0.8"
+            android:clickable="true"
             />
+
 
     </RelativeLayout>
 </RelativeLayout>
