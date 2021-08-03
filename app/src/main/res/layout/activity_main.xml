@@ -39,15 +39,9 @@
             android:layout_marginTop="110dp"
             android:background="@drawable/title" />
 
-<<<<<<< Updated upstream
-        <EditText
-            android:id="@+id/user"
-            android:layout_width="270dp"
-=======
         <Button
             android:id="@+id/guest"
             android:layout_width="wrap_content"
->>>>>>> Stashed changes
             android:layout_height="wrap_content"
             android:background="@drawable/guest"
             android:layout_below="@id/title"
@@ -68,28 +62,8 @@
             android:layout_marginTop="18dp"
             />
 
-<<<<<<< Updated upstream
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            />
-=======
->>>>>>> Stashed changes
-
         <Button
             android:id="@+id/googleSignInBtn"
-<<<<<<< Updated upstream
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="Google"
-            android:textSize="12dp"
-            android:paddingLeft="20dp"
-            android:layout_alignRight="@id/holder"
-            android:layout_below="@id/pass"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="26dp"
-            android:background="@drawable/google"
-            android:textColor="@color/white"/>
-
-=======
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/google"
@@ -100,7 +74,6 @@
             android:text="Google"
             android:textColor="@color/white"
             android:textAllCaps="false"/>
->>>>>>> Stashed changes
 
         <ImageView
             android:layout_width="20dp"
@@ -127,23 +100,6 @@
             />
 
         <Button
-<<<<<<< Updated upstream
-            android:id="@+id/adminloginbtn"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="admin login"
-            android:textSize="12dp"
-            android:translationX="0dp"
-            android:layout_alignLeft="@id/holder"
-            android:layout_below="@id/pass"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="26dp"
-            android:background="@drawable/admin"
-            android:textColor="@color/white"
-            />
-
-
-=======
             android:id="@+id/adminloginbtn1"
             android:layout_width="164dp"
             android:layout_height="30dp"
@@ -155,6 +111,5 @@
             android:textColor="@color/white"
             android:alpha="0.7"
             />
->>>>>>> Stashed changes
     </RelativeLayout>
 </RelativeLayout>
