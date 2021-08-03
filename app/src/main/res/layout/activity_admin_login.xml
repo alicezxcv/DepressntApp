@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin_login">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_admin"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:alpha="0.5"
+            android:background="@drawable/holder"
+            android:id="@+id/holder"
+            />
+
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/holder"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/title" />
+
+        <EditText
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user"
+            android:layout_below="@id/title"
+            android:hint="Email"
+            android:textColorHint="@color/purple_200"
+            android:textSize="12dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pass"
+            android:layout_below="@id/user"
+            android:hint="Password"
+            android:textColorHint="@color/purple_200"
+            android:textSize="12dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:background="@drawable/admin"
+            android:layout_below="@id/pass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:textAllCaps="false"
+            android:text="Log in as admin"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/userloginbtn"
+            android:layout_width="164dp"
+            android:layout_height="30dp"
+            android:background="@drawable/admin"
+            android:layout_above="@id/holder"
+            android:layout_alignLeft="@id/holder"
+            android:text="Go to User dashboard"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
