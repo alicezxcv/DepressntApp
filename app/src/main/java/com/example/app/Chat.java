@@ -117,11 +117,7 @@ public class Chat extends AppCompatActivity {
             chat_msg= (String) ((DataSnapshot)i.next()).getValue();
             chat_user_name= (String) ((DataSnapshot)i.next()).getValue();
 
-<<<<<<< HEAD
-            arrayList.add(chat_user_name+ "\n"+chat_msg);
-=======
-            arrayList.add(chat_user_name+"\n"+chat_msg);
->>>>>>> 76de5b43c288944206a06d81c7c1df908819a507
+            arrayList.add(chat_user_name+ "\n" +chat_msg);
             adapter.notifyDataSetChanged();
             //adapter.add(chat_user_name+ " : "+chat_msg);
             //chat_conversation.(chat_user_name+ " : "+chat_msg+"\n");
