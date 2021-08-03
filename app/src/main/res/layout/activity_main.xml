@@ -39,40 +39,44 @@
             android:layout_marginTop="110dp"
             android:background="@drawable/title" />
 
+<<<<<<< Updated upstream
         <EditText
             android:id="@+id/user"
             android:layout_width="270dp"
+=======
+        <Button
+            android:id="@+id/guest"
+            android:layout_width="wrap_content"
+>>>>>>> Stashed changes
             android:layout_height="wrap_content"
+            android:background="@drawable/guest"
             android:layout_below="@id/title"
+            android:layout_marginTop="100dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"
-            android:paddingLeft="15dp"
-            android:background="@drawable/user"
-            android:hint="Admin Email"
-            android:inputType="text"
-            android:textColorHint="@color/white"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/white"
+            android:text="Log in as Guest"
+            android:textAllCaps="false"
             />
 
-        <EditText
-            android:id="@+id/pass"
-            android:layout_width="270dp"
+        <ImageView
+            android:id="@+id/separator"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/pass"
+            android:background="@drawable/login_seperator"
+            android:layout_below="@id/guest"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/user"
-            android:layout_marginTop="20dp"
-            android:inputType="textPassword"
-            android:hint="Admin Password"
-            android:paddingLeft="15dp"
-            android:textColorHint="@color/white"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:layout_marginTop="18dp"
             />
 
-        <!--Google SignInButton-->
+<<<<<<< Updated upstream
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            />
+=======
+>>>>>>> Stashed changes
+
         <Button
             android:id="@+id/googleSignInBtn"
+<<<<<<< Updated upstream
             android:layout_width="130dp"
             android:layout_height="50dp"
             android:text="Google"
@@ -85,18 +89,45 @@
             android:background="@drawable/google"
             android:textColor="@color/white"/>
 
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/google"
+            android:layout_below="@id/separator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:paddingLeft="10dp"
+            android:text="Google"
+            android:textColor="@color/white"
+            android:textAllCaps="false"/>
+>>>>>>> Stashed changes
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignLeft="@id/googleSignInBtn"
             android:layout_alignTop="@id/googleSignInBtn"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="25dp"
-            android:src="@drawable/google01" />
-        <!--/Google SignInButton-->
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/google01"
+            />
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not registered yet? Create an account"
+            android:layout_below="@id/googleSignInBtn"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="13dp"
+            android:textSize="10dp"
+            android:textColor="@color/purple_500"
+            android:alpha="0.6"
+            android:clickable="true"
+            />
 
         <Button
+<<<<<<< Updated upstream
             android:id="@+id/adminloginbtn"
             android:layout_width="130dp"
             android:layout_height="50dp"
@@ -112,6 +143,18 @@
             />
 
 
+=======
+            android:id="@+id/adminloginbtn1"
+            android:layout_width="164dp"
+            android:layout_height="30dp"
+            android:background="@drawable/admin"
+            android:layout_above="@id/holder"
+            android:layout_alignRight="@id/holder"
+            android:text="Go to Admin dashboard"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:alpha="0.7"
+            />
+>>>>>>> Stashed changes
     </RelativeLayout>
-
 </RelativeLayout>
