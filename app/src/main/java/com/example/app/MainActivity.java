@@ -40,11 +40,10 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient googleSignInClient;
 
     private FirebaseAuth firebaseAuth;
-
+    private Button signInbtn;
     private static final String TAG = "GOOGLE_SIGN_IN_TAG";
 
-    private EditText mEmail, mPass;
-    private Button signInbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +51,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // get typed email and pass
-        mEmail = findViewById(R.id.user);
-        mPass = findViewById(R.id.pass);
-        signInbtn = findViewById(R.id.adminloginbtn);
+        signInbtn = findViewById(R.id.adminloginbtn1);
 
         //configure the Google Signin
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -80,58 +76,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // admin signin button
-        binding.adminloginbtn.setOnClickListener(new View.OnClickListener() {
+        binding.adminloginbtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /* begin admin sign in */
+                startActivity(new Intent(MainActivity.this,admin_login.class));
+                finish();
             }
         });
-        signInbtn.setOnClickListener((v) -> {loginUser();});
     }
 
-    private void loginUser() {
-        String email = mEmail.getText().toString();
-        String password = mPass.getText().toString();
 
-        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            if (!password.isEmpty()){
-                firebaseAuth.signInWithEmailAndPassword(email,password)
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                Toast.makeText(MainActivity.this, "Login Successfully!!!", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(MainActivity.this ,ProfileActivity2.class));
-                                finish();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-            else{
-                mPass.setError("Empty fields are not allowed");
-            }
-        }
-        else if (email.isEmpty()){
-            mEmail.setError("Empty fields are not allowed");
-        }
-        else{
-            mEmail.setError("Please enter correct email");
-        }
-    }
 
-    /*private void checkUser() {
-        // if user is already signed in then go to room
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        if (firebaseUser != null){
-            Log.d(TAG, "checkUser: Already logged in");
-            startActivity(new Intent(MainActivity.this,ProfileActivity2.class));
-            finish();
-        }
-    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
