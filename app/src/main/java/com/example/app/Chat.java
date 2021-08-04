@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -68,16 +69,22 @@ public class Chat extends AppCompatActivity {
         btn_send_msg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Map<String,Object> map = new HashMap<String,Object>();
-                tmp_key = root.push().getKey();
-                root.updateChildren(map);
+                if(input_msg.getText().toString().isEmpty() || input_msg.getText().toString().trim().isEmpty())
+                {
+                    Toast.makeText(Chat.this, "Please enter something!!!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Map<String, Object> map = new HashMap<String, Object>();
+                    tmp_key = root.push().getKey();
+                    root.updateChildren(map);
 
-                DatabaseReference message_root = root.child(tmp_key);
-                Map<String,Object> map2 = new HashMap<String,Object>();
-                map2.put("name",user_name);
-                map2.put("msg",input_msg.getText().toString());
-                input_msg.getText().clear();
-                message_root.updateChildren(map2);
+                    DatabaseReference message_root = root.child(tmp_key);
+                    Map<String, Object> map2 = new HashMap<String, Object>();
+                    map2.put("name", user_name);
+                    map2.put("msg", input_msg.getText().toString());
+                    input_msg.getText().clear();
+                    message_root.updateChildren(map2);
+                }
             }
         });
 
