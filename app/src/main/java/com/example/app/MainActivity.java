@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient googleSignInClient;
 
     private FirebaseAuth firebaseAuth;
-    private Button signInbtn;
+    private TextView signInbtn;
     private static final String TAG = "GOOGLE_SIGN_IN_TAG";
 
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        signInbtn = findViewById(R.id.adminloginbtn1);
+        signInbtn = findViewById(R.id.goto_admin);
 
         //configure the Google Signin
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -75,18 +75,22 @@ public class MainActivity extends AppCompatActivity {
            }
         });
 
-        // admin signin button
-        binding.adminloginbtn1.setOnClickListener(new View.OnClickListener() {
+        /* admin signin button
+        binding.signInbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /* begin admin sign in */
+                /* begin admin sign in
                 startActivity(new Intent(MainActivity.this,admin_login.class));
                 finish();
             }
-        });
+        });*/
+
     }
 
-
+    public void onClick(View v){
+        startActivity(new Intent(MainActivity.this,admin_login.class));
+        finish();
+    }
 
 
     @Override

@@ -107,12 +107,12 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/holder"
             android:layout_alignRight="@id/holder"
-            android:text="Go to Admin dashboard"
-            android:textAllCaps="false"
-            android:textColor="@color/CTA_purple"
             android:alpha="0.8"
             android:clickable="true"
-            />
+            android:onClick="onClick"
+            android:text="Go to Admin dashboard"
+            android:textAllCaps="false"
+            android:textColor="@color/CTA_purple" />
 
     </RelativeLayout>
 </RelativeLayout>
