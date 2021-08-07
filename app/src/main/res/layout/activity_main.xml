@@ -39,82 +39,80 @@
             android:layout_marginTop="110dp"
             android:background="@drawable/title" />
 
-        <!--<EditText
-            android:id="@+id/user"
-            android:layout_width="270dp"
+
+        <Button
+            android:id="@+id/guest"
+            android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
+            android:background="@drawable/guest"
             android:layout_below="@id/title"
+            android:layout_marginTop="100dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"
-            android:paddingLeft="15dp"
-            android:background="@drawable/user"
-            android:hint="Admin Email"
-            android:inputType="text"
-            android:textColorHint="@color/white"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/white"
+            android:text="Log in as Guest"
+            android:textAllCaps="false"
             />
 
-        <EditText
-            android:id="@+id/pass"
-            android:layout_width="270dp"
+        <ImageView
+            android:id="@+id/separator"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/pass"
+            android:background="@drawable/login_seperator"
+            android:layout_below="@id/guest"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/user"
-            android:layout_marginTop="20dp"
-            android:inputType="textPassword"
-            android:hint="Admin Password"
-            android:paddingLeft="15dp"
-            android:textColorHint="@color/white"
-
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            />-->
-
-        <!--Google SignInButton-->
-        <Button
-            android:id="@+id/googleSignInBtn"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="Google"
-            android:textSize="12dp"
-            android:paddingLeft="20dp"
-            android:layout_alignRight="@id/holder"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="26dp"
-            android:background="@drawable/google"
-            android:textColor="@color/white"/>
-            <!--
-            android:layout_below="@id/pass"
-            -->
-
-
+            android:layout_marginTop="18dp"
+            />
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignLeft="@id/googleSignInBtn"
             android:layout_alignTop="@id/googleSignInBtn"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="25dp"
-            android:src="@drawable/google01" />
-        <!--/Google SignInButton-->
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/google01"
+            />
 
         <Button
-            android:id="@+id/adminloginbtn1"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="admin login"
-            android:textSize="12dp"
-            android:translationX="0dp"
-            android:layout_alignLeft="@id/holder"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="26dp"
-            android:background="@drawable/admin"
-            android:textColor="@color/white"/>
-            <!--android:layout_below="@id/pass"-->
+            android:id="@+id/googleSignInBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/google"
+            android:layout_below="@id/separator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:paddingLeft="10dp"
+            android:text="Google"
+            android:textColor="@color/white"
+            android:textAllCaps="false"/>
 
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not registered yet? Create an account"
+            android:layout_below="@id/googleSignInBtn"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="13dp"
+            android:textSize="10dp"
+            android:textColor="@color/CTA_purple"
+            android:alpha="0.8"
+            android:clickable="true"
+            />
 
+        <TextView
+            android:id="@+id/goto_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/holder"
+            android:layout_alignRight="@id/holder"
+            android:text="Go to Admin dashboard"
+            android:textAllCaps="false"
+            android:textColor="@color/CTA_purple"
+            android:alpha="0.8"
+            android:clickable="true"
+            />
 
     </RelativeLayout>
-
 </RelativeLayout>
