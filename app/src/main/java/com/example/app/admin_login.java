@@ -46,6 +46,11 @@ public class admin_login extends AppCompatActivity {
         signInbtn.setOnClickListener((v) -> {loginUser();});
     }
 
+    public void onClick1(View v){
+        startActivity(new Intent(admin_login.this,MainActivity.class));
+        finish();
+    }
+
     private void loginUser() {
         String email = mEmail.getText().toString();
         String password = mPass.getText().toString();

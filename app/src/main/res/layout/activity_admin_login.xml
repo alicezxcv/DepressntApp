@@ -43,41 +43,44 @@
             android:id="@+id/user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/user"
             android:layout_below="@id/title"
-            android:hint="Email"
-            android:textColorHint="@color/white"
-            android:textSize="12dp"
-            android:paddingLeft="15dp"
-            android:layout_marginTop="100dp"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="100dp"
+            android:background="@drawable/user"
+            android:hint="Email"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingLeft="15dp"
+            android:textColorHint="@color/white"
+            android:textSize="12dp" />
 
         <EditText
             android:id="@+id/pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/pass"
             android:layout_below="@id/user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/pass"
             android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
             android:textColorHint="@color/white"
             android:textSize="12dp"
-            android:paddingLeft="15dp"
-            android:layout_marginTop="25dp"
-            android:layout_centerHorizontal="true"
+            android:maxLines="1"
             />
 
         <Button
+            android:id="@+id/adminloginbtn"
             android:layout_width="wrap_content"
             android:layout_height="33dp"
-            android:background="@drawable/admin"
             android:layout_below="@id/pass"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:textAllCaps="false"
+            android:background="@drawable/admin"
             android:text="Log in as admin"
-            android:textColor="@color/white"
-            />
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
 
         <TextView
@@ -91,6 +94,7 @@
             android:textColor="@color/white"
             android:alpha="0.8"
             android:clickable="true"
+            android:onClick="onClick1"
             />
 
 
