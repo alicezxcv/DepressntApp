@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -43,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView signInbtn;
     private static final String TAG = "GOOGLE_SIGN_IN_TAG";
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,28 +74,13 @@ public class MainActivity extends AppCompatActivity {
            }
         });
 
-<<<<<<< Updated upstream
-        /* admin signin button
-        binding.signInbtn.setOnClickListener(new View.OnClickListener() {
-=======
         // log in as guest
         binding.guest.setOnClickListener(new View.OnClickListener(){
->>>>>>> Stashed changes
             @Override
             public void onClick(View view){
                 startActivity(new Intent(MainActivity.this,MainActivity2.class));
                 finish();
             }
-<<<<<<< Updated upstream
-        });*/
-        binding.guest.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startActivity(new Intent(MainActivity.this,Main.class));
-                finish();
-            }
-        });
-=======
         });
 
     }
@@ -109,13 +93,13 @@ public class MainActivity extends AppCompatActivity {
             ((ViewGroup) v).setClipChildren(false);
         }
         disableClipOnParents((View) v.getParent());
->>>>>>> Stashed changes
     }
 
     public void onClick(View v){
         startActivity(new Intent(MainActivity.this,admin_login.class));
         finish();
     }
+
 
 
     @Override

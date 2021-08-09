@@ -6,8 +6,6 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
-<<<<<<< Updated upstream
-=======
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
@@ -15,5 +13,4 @@
       </ProjectState>
     </option>
   </component>
->>>>>>> Stashed changes
 </project>

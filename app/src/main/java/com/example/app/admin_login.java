@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +24,17 @@ public class admin_login extends AppCompatActivity {
     private EditText mEmail, mPass;
     private Button signInbtn;
     private FirebaseAuth firebaseAuth;
+
+    public void disableClipOnParents(View v) {
+        if (v == null) {
+            return;
+        }
+        if (v instanceof ViewGroup) {
+            ((ViewGroup) v).setClipChildren(false);
+        }
+        disableClipOnParents((View) v.getParent());
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

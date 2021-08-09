@@ -12,26 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        <activity android:name=".admin_login"></activity>
-        <activity
-            android:name=".Chat"
-            android:theme="@style/Theme.App.Chat_Background" />
-=======
-        <activity android:name=".Main"></activity>
-=======
-        <activity android:name=".MainActivity2"></activity>
->>>>>>> Stashed changes
         <activity
             android:name=".admin_login"
-            android:theme="@style/Theme.App.LogIn_Background"></activity>
-        <activity android:name=".Chat" />
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-        <activity android:name=".Room" />
+            android:theme="@style/Theme.App.LogIn_Background">
+        </activity>
+        <activity android:name=".Chat"/>
+        <activity android:name=".Main"></activity>
+        <activity android:name=".MainActivity2"></activity>
         <activity android:name=".ProfileActivity2" />
         <activity
             android:name=".MainActivity"
