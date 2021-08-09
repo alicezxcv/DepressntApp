@@ -5,114 +5,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    android:clipChildren="false"
+    >
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp" />
+
+    <ImageView
+        android:id="@+id/holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/holder"
+        android:layout_below="@id/title"
+        android:layout_marginTop="88dp"
+        android:layout_marginLeft="-366dp"
+        android:scaleType="centerCrop"/>
+
+
+    <Button
+        android:id="@+id/guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/guest"
+        android:text="Log in as Guest"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@id/holder"
+        android:layout_marginTop="57dp"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/login"
-        android:scaleType="centerCrop"
+        android:background="@drawable/guest_shadow"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@id/holder"
+        android:layout_marginTop="60dp"/>
+
+    <ImageView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/login_seperator"
+        android:layout_below="@id/guest"
+        android:layout_marginTop="18dp"
         />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+    <Button
+        android:id="@+id/googleSignInBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/google"
+        android:text="Google"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:paddingLeft="22dp"
+        android:layout_below="@id/separator"
+        android:layout_marginTop="18dp"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:alpha="0.5"
-            android:background="@drawable/holder"
-            android:id="@+id/holder"
-            />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/separator"
+        android:background="@drawable/google_shadow"
+        android:layout_marginTop="20dp"/>
 
-        <ImageView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/holder"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"
-            android:background="@drawable/title" />
+    <TextView
+        android:id="@+id/goto_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/googleSignInBtn"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:text= "Go to admin dashboard"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:textColor="@color/CTA_purple"
+        android:clickable="true"
+        android:onClick="onClick"/>
 
+    <ImageView
+        android:id="@+id/login_illus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/illus"/>
 
-        <Button
-            android:id="@+id/guest"
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-            android:background="@drawable/guest"
-            android:layout_below="@id/title"
-            android:layout_marginTop="100dp"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:text="Log in as Guest"
-            android:textAllCaps="false"
-            />
-
-        <ImageView
-            android:id="@+id/separator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/login_seperator"
-            android:layout_below="@id/guest"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
-            />
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@id/googleSignInBtn"
-            android:layout_alignTop="@id/googleSignInBtn"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/google01"
-            />
-
-        <Button
-            android:id="@+id/googleSignInBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/google"
-            android:layout_below="@id/separator"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
-            android:paddingLeft="10dp"
-            android:text="Google"
-            android:textColor="@color/white"
-            android:textAllCaps="false"/>
-
-        <TextView
-            android:id="@+id/register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Not registered yet? Create an account"
-            android:layout_below="@id/googleSignInBtn"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="13dp"
-            android:textSize="10dp"
-            android:textColor="@color/CTA_purple"
-            android:alpha="0.8"
-            android:clickable="true"
-            />
-
-        <TextView
-            android:id="@+id/goto_admin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/holder"
-            android:layout_alignRight="@id/holder"
-            android:alpha="0.8"
-            android:clickable="true"
-            android:onClick="onClick"
-            android:text="Go to Admin dashboard"
-            android:textAllCaps="false"
-            android:textColor="@color/CTA_purple" />
-
-    </RelativeLayout>
 </RelativeLayout>

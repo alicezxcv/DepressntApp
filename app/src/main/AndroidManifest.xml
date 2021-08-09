@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-        <activity android:name=".admin_login"></activity>
         <activity
-            android:name=".Chat"
-            android:theme="@style/Theme.App.Chat_Background" />
+            android:name=".admin_login"
+            android:theme="@style/Theme.App.LogIn_Background">
+        </activity>
+        <activity android:name=".Chat"/>
         <activity android:name=".Room" />
         <activity android:name=".ProfileActivity2" />
         <activity
@@ -23,7 +24,6 @@
             android:theme="@style/Theme.App.LogIn_Background">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
