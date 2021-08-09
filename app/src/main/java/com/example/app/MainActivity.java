@@ -75,14 +75,19 @@ public class MainActivity extends AppCompatActivity {
            }
         });
 
+<<<<<<< Updated upstream
         /* admin signin button
         binding.signInbtn.setOnClickListener(new View.OnClickListener() {
+=======
+        // log in as guest
+        binding.guest.setOnClickListener(new View.OnClickListener(){
+>>>>>>> Stashed changes
             @Override
-            public void onClick(View view) {
-                /* begin admin sign in
-                startActivity(new Intent(MainActivity.this,admin_login.class));
+            public void onClick(View view){
+                startActivity(new Intent(MainActivity.this,MainActivity2.class));
                 finish();
             }
+<<<<<<< Updated upstream
         });*/
         binding.guest.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -91,6 +96,20 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+=======
+        });
+
+    }
+
+    public void disableClipOnParents(View v) {
+        if (v == null) {
+            return;
+        }
+        if (v instanceof ViewGroup) {
+            ((ViewGroup) v).setClipChildren(false);
+        }
+        disableClipOnParents((View) v.getParent());
+>>>>>>> Stashed changes
     }
 
     public void onClick(View v){

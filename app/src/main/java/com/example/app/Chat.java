@@ -4,6 +4,7 @@ package com.example.app;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -129,5 +130,12 @@ public class Chat extends AppCompatActivity {
             //adapter.add(chat_user_name+ " : "+chat_msg);
             //chat_conversation.(chat_user_name+ " : "+chat_msg+"\n");
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent= new Intent(getApplicationContext(),Room.class);
+        intent.putExtra("user_name",user_name);
+        startActivity(intent);
     }
 }

@@ -27,7 +27,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         android:layout_below="@id/chatBtn"
         android:layout_marginTop="5dp"
         android:text="Logout"/>

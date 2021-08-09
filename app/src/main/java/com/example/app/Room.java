@@ -54,6 +54,7 @@ public class Room extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_of_rooms);
 
         listView.setAdapter(arrayAdapter);
+<<<<<<< Updated upstream
 
         name = getIntent().getExtras().get("user_name").toString();
         // admin sign in so no need to ask name
@@ -62,6 +63,18 @@ public class Room extends AppCompatActivity {
             while (name.equals("Admin") || name.equals("admin")){
                 request_user_name();
             }
+=======
+        try {
+            name = getIntent().getExtras().get("user_name").toString();
+        }
+        catch (Exception e){
+            Toast.makeText(Room.this, "Join chat using google account", Toast.LENGTH_SHORT).show();
+            name = "";
+        }
+        // admin sign in so no need to ask name
+        if (name.equals("Admin") == false){
+            request_user_name();
+>>>>>>> Stashed changes
         }
 
         add_room.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +121,7 @@ public class Room extends AppCompatActivity {
 
     private void request_user_name() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
         builder.setTitle("Enter name:");
 
         final EditText input_field = new EditText(this);
