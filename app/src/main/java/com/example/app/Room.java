@@ -54,6 +54,7 @@ public class Room extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_of_rooms);
 
         listView.setAdapter(arrayAdapter);
+
         try {
             name = getIntent().getExtras().get("user_name").toString();
         }
@@ -62,7 +63,7 @@ public class Room extends AppCompatActivity {
             name = "";
         }
         // admin sign in so no need to ask name
-        if (name.equals("Admin") == false){
+        if (name.equals("") == true || name.equals("Admin")==true ){
             request_user_name();
         }
 

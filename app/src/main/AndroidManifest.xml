@@ -17,7 +17,7 @@
             android:theme="@style/Theme.App.LogIn_Background">
         </activity>
         <activity android:name=".Chat"/>
-        <activity android:name=".Main"></activity>
+        <activity android:name=".Room"/>
         <activity android:name=".MainActivity2"></activity>
         <activity android:name=".ProfileActivity2" />
         <activity
