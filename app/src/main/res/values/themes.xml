@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.App" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_blue</item>
-        <item name="colorPrimaryVariant">@color/purple</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/sky_blue</item>
@@ -19,7 +19,11 @@
     </style>
 
     <style name="Theme.App.LogIn_Background">
-        <item name="android:windowBackground">@drawable/login_background</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="Theme.App.Main_Background">
+        <item name="android:windowBackground">@drawable/main_bg</item>
     </style>
 
 </resources>

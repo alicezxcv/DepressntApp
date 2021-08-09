@@ -30,7 +30,7 @@
         android:background="@drawable/txtedit"
         android:alpha="0.7"
         android:hint="Input"
-        android:textColorHint="@color/purple"
+        android:textColorHint="@color/purple_blue"
         android:paddingLeft="25dp" />
 
     <!--<ScrollView

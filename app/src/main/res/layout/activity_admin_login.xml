@@ -4,99 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_login">
+    tools:context=".admin_login"
+    android:clipChildren="false">
 
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp" />
+
+    <ImageView
+        android:id="@+id/holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/holder"
+        android:layout_below="@id/title"
+        android:layout_marginTop="88dp"
+        android:layout_marginLeft="-366dp"
+        android:scaleType="centerCrop"/>
+
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/holder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/user"
+        android:hint="Email"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="15dp"
+        android:textColorHint="@color/purple_blue"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/pass"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:textColorHint="@color/purple_blue"
+        android:textSize="12dp"
+        android:maxLines="1"
+        />
+
+    <Button
+        android:id="@+id/adminloginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/pass"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/admin"
+        android:scaleY="0.65"
+        android:textScaleX="0.65"
+        android:text="Log in as admin"
+        android:textColor="@color/white"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/login_admin"
-        android:scaleType="centerCrop"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:background="@drawable/admin_shadow"
+        android:layout_below="@id/pass"
+        android:layout_marginTop="27dp"
         />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+    <TextView
+        android:id="@+id/goto_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/adminloginbtn"
+        android:layout_marginTop="12dp"
+        android:text="Go to User dashboard"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:textColor="@color/CTA_purple"
+        android:clickable="true"
+        android:onClick="onClick1"
+        />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:alpha="0.5"
-            android:background="@drawable/holder"
-            android:id="@+id/holder"
-            />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/illus"/>
 
-        <ImageView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/holder"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"
-            android:background="@drawable/title" />
-
-        <EditText
-            android:id="@+id/user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/user"
-            android:hint="Email"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingLeft="15dp"
-            android:textColorHint="@color/white"
-            android:textSize="12dp" />
-
-        <EditText
-            android:id="@+id/pass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/user"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/pass"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingLeft="15dp"
-            android:textColorHint="@color/white"
-            android:textSize="12dp"
-            android:maxLines="1"
-            />
-
-        <Button
-            android:id="@+id/adminloginbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="33dp"
-            android:layout_below="@id/pass"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/admin"
-            android:text="Log in as admin"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
-
-
-        <TextView
-            android:id="@+id/goto_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/holder"
-            android:layout_alignLeft="@id/holder"
-            android:text="Go to User dashboard"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:alpha="0.8"
-            android:clickable="true"
-            android:onClick="onClick1"
-            />
-
-
-    </RelativeLayout>
 </RelativeLayout>
