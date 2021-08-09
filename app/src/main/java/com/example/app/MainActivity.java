@@ -74,16 +74,14 @@ public class MainActivity extends AppCompatActivity {
            }
         });
 
-
-        /* admin signin button
-        binding.signInbtn.setOnClickListener(new View.OnClickListener() {
+        // log in as guest
+        binding.guest.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                /* begin admin sign in
-                startActivity(new Intent(MainActivity.this,admin_login.class));
+            public void onClick(View view){
+                startActivity(new Intent(MainActivity.this,MainActivity2.class));
                 finish();
             }
-        });*/
+        });
 
     }
 
