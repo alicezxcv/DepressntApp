@@ -61,10 +61,11 @@ public class Room extends AppCompatActivity {
             Toast.makeText(Room.this, "Join chat using google account", Toast.LENGTH_SHORT).show();
             name = "";
         }
-        // admin sign in so no need to ask name
-        if (name.equals("Admin") == false){
+
+        if (name.equals("") == true){
             request_user_name();
         }
+
 
         add_room.setOnClickListener(new View.OnClickListener() {
             @Override
