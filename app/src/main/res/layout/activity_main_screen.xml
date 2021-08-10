@@ -10,19 +10,18 @@
         android:id="@+id/pfp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0">
+        android:layout_weight="1"
+        android:layout_marginTop="12dp">
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/user_pfp"
-            android:layout_marginTop="52dp"
             android:layout_marginLeft="16dp"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setting"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="52dp"
             android:layout_marginRight= "16dp"/>
     </RelativeLayout>
 
@@ -32,7 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/pfp"
         android:layout_weight="1"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="6dp"
+        >
         <TextView
             android:id="@+id/greet1"
             android:layout_width="wrap_content"
@@ -57,11 +57,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/info"
-        android:layout_weight="1"
-        android:layout_marginTop="24dp">
+        android:layout_weight="3"
+        android:layout_marginTop="6dp">
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,7 +126,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/categories"
-            android:layout_marginTop="14dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:useDefaultMargins="true"
             android:rowCount="2"
@@ -360,7 +362,7 @@
 
     <ImageView
         android:id="@+id/login_illus"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:scaleType="fitEnd"
