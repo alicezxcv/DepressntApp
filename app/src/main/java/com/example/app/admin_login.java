@@ -96,4 +96,10 @@ public class admin_login extends AppCompatActivity {
             mEmail.setError("Please enter correct email");
         }
     }
+
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(admin_login.this, MainActivity.class));
+        finish();
+    }
 }
