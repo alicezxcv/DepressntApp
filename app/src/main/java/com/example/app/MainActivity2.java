@@ -22,7 +22,7 @@ public class MainActivity2 extends AppCompatActivity {
         binding.videoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ///
+                /// start activity to youtube player
             }
         });
     }
