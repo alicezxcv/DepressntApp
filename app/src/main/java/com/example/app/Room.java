@@ -54,6 +54,7 @@ public class Room extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_of_rooms);
 
         listView.setAdapter(arrayAdapter);
+
         try {
             name = getIntent().getExtras().get("user_name").toString();
         }
@@ -61,7 +62,6 @@ public class Room extends AppCompatActivity {
             Toast.makeText(Room.this, "Join chat using google account", Toast.LENGTH_SHORT).show();
             name = "";
         }
-
         if (name.equals("") == true){
             request_user_name();
         }
