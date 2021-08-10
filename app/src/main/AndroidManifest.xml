@@ -12,11 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-        <activity android:name=".admin_login"></activity>
+        <activity android:name=".PlayVideo"
+            android:configChanges="orientation|screenSize"></activity>
+        <activity android:name=".ViewVideo" />
         <activity
-            android:name=".Chat"
-            android:theme="@style/Theme.App.Chat_Background" />
+            android:name=".admin_login"
+            android:theme="@style/Theme.App.LogIn_Background" />
+        <activity android:name=".Chat" />
         <activity android:name=".Room" />
+        <activity android:name=".MainActivity2" />
         <activity android:name=".ProfileActivity2" />
         <activity
             android:name=".MainActivity"
