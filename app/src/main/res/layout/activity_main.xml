@@ -1,120 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    >
 
     <ImageView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/login"
-        android:scaleType="centerCrop"
+        android:src="@drawable/title"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        />
+        android:layout_marginTop="64dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"/>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:gravity="center"
+        android:layout_weight="4">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:alpha="0.5"
-            android:background="@drawable/holder"
             android:id="@+id/holder"
-            />
-
-        <ImageView
-            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/holder"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"
-            android:background="@drawable/title" />
+            android:src="@drawable/holder"
+            android:layout_marginLeft="-366dp"
+            android:scaleType="centerCrop"
+            android:paddingEnd="50dp"/>
 
-        <!--<EditText
-            android:id="@+id/user"
-            android:layout_width="270dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"
-            android:paddingLeft="15dp"
-            android:background="@drawable/user"
-            android:hint="Admin Email"
-            android:inputType="text"
-            android:textColorHint="@color/white"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            />
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true">
 
-        <EditText
-            android:id="@+id/pass"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/pass"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/user"
-            android:layout_marginTop="20dp"
-            android:inputType="textPassword"
-            android:hint="Admin Password"
-            android:paddingLeft="15dp"
-            android:textColorHint="@color/white"
+            <Button
+                android:id="@+id/guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/guest"
+                android:text="Log in as Guest"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="48dp"
+                />
 
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            />-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/guest_shadow"
+                android:layout_centerHorizontal="true"
 
-        <!--Google SignInButton-->
-        <Button
-            android:id="@+id/googleSignInBtn"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="Google"
-            android:textSize="12dp"
-            android:paddingLeft="20dp"
-            android:layout_alignRight="@id/holder"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="26dp"
-            android:background="@drawable/google"
-            android:textColor="@color/white"/>
-            <!--
-            android:layout_below="@id/pass"
-            -->
+                android:layout_marginTop="60dp"/>
 
+            <ImageView
+                android:id="@+id/separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/login_seperator"
+                android:layout_below="@id/guest"
+                android:layout_marginTop="18dp"
+                />
 
+            <Button
+                android:id="@+id/googleSignInBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/google"
+                android:text="Google"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:paddingLeft="22dp"
+                android:layout_below="@id/separator"
+                android:layout_marginTop="18dp"/>
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@id/googleSignInBtn"
-            android:layout_alignTop="@id/googleSignInBtn"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="25dp"
-            android:src="@drawable/google01" />
-        <!--/Google SignInButton-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/separator"
+                android:background="@drawable/google_shadow"
+                android:layout_marginTop="20dp"/>
 
-        <Button
-            android:id="@+id/adminloginbtn1"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:text="admin login"
-            android:textSize="12dp"
-            android:translationX="0dp"
-            android:layout_alignLeft="@id/holder"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="26dp"
-            android:background="@drawable/admin"
-            android:textColor="@color/white"/>
-            <!--android:layout_below="@id/pass"-->
-
-
-
+            <TextView
+                android:id="@+id/goto_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/googleSignInBtn"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="14dp"
+                android:text= "Go to admin dashboard"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textColor="@color/CTA_purple"
+                android:clickable="true"
+                android:onClick="onClick"/>
+        </RelativeLayout>
     </RelativeLayout>
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/login_illus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="fitEnd"
+        android:background="@drawable/illus"
+        android:layout_weight="0"/>
+</LinearLayout>

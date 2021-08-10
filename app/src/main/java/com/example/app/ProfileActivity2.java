@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.app.databinding.ActivityProfile2Binding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,6 +33,16 @@ public class ProfileActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 firebaseAuth.signOut();
                 checkUser();
+            }
+        });
+
+        //handle click chat button
+        binding.chatBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent= new Intent(getApplicationContext(),Room.class);
+                intent.putExtra("user_name","Admin");
+                startActivity(intent);
             }
         });
     }

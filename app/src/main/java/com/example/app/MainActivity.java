@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -40,10 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient googleSignInClient;
 
     private FirebaseAuth firebaseAuth;
-    private Button signInbtn;
+    private TextView signInbtn;
     private static final String TAG = "GOOGLE_SIGN_IN_TAG";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        signInbtn = findViewById(R.id.adminloginbtn1);
+        signInbtn = findViewById(R.id.goto_admin);
 
         //configure the Google Signin
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -75,17 +74,31 @@ public class MainActivity extends AppCompatActivity {
            }
         });
 
-        // admin signin button
-        binding.adminloginbtn1.setOnClickListener(new View.OnClickListener() {
+        // log in as guest
+        binding.guest.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                /* begin admin sign in */
-                startActivity(new Intent(MainActivity.this,admin_login.class));
+            public void onClick(View view){
+                startActivity(new Intent(MainActivity.this,MainActivity2.class));
                 finish();
             }
         });
+
     }
 
+    public void disableClipOnParents(View v) {
+        if (v == null) {
+            return;
+        }
+        if (v instanceof ViewGroup) {
+            ((ViewGroup) v).setClipChildren(false);
+        }
+        disableClipOnParents((View) v.getParent());
+    }
+
+    public void onClick(View v){
+        startActivity(new Intent(MainActivity.this,admin_login.class));
+        finish();
+    }
 
 
 

@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -53,7 +55,17 @@ public class Room extends AppCompatActivity {
 
         listView.setAdapter(arrayAdapter);
 
-        request_user_name();
+        try {
+            name = getIntent().getExtras().get("user_name").toString();
+        }
+        catch (Exception e){
+            Toast.makeText(Room.this, "Join chat using google account", Toast.LENGTH_SHORT).show();
+            name = "";
+        }
+        if (name.equals("") == true){
+            request_user_name();
+        }
+
 
         add_room.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +111,7 @@ public class Room extends AppCompatActivity {
 
     private void request_user_name() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
         builder.setTitle("Enter name:");
 
         final EditText input_field = new EditText(this);
@@ -115,7 +128,7 @@ public class Room extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
-                startActivity(new Intent(Room.this, ProfileActivity2.class));
+                startActivity(new Intent(Room.this, MainActivity.class));
                 finish();
             }
         });
@@ -124,7 +137,7 @@ public class Room extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(Room.this, ProfileActivity2.class));
+        startActivity(new Intent(Room.this, MainActivity.class));
         finish();
     }
 }
