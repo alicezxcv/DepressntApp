@@ -23,6 +23,10 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 /// start activity to youtube player
+
+                startActivity(new Intent(MainActivity2.this, ViewVideo.class));
+                
+
             }
         });
     }
