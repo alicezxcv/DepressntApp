@@ -4,14 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import com.example.app.databinding.ActivityMainScreenBinding;
 
 public class MainActivity2 extends AppCompatActivity {
+
+    private ActivityMainScreenBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_screen);
+        binding = ActivityMainScreenBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        // handle click video image button
+        binding.videoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ///
+            }
+        });
     }
+
+
+
 
     @Override
     public void onBackPressed(){
