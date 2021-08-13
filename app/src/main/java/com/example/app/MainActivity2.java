@@ -33,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(MainActivity2.this, ProfileActivity2.class));
+        startActivity(new Intent(MainActivity2.this, MainActivity.class));
         finish();
     }
 }

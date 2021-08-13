@@ -42,7 +42,7 @@ public class Room extends AppCompatActivity {
     private ArrayAdapter<String> arrayAdapter;
     private ArrayList<String> list_of_rooms = new ArrayList<>();
     private String name;
-    private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
+    private DatabaseReference root = FirebaseDatabase.getInstance().getReference().child("Room");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +81,7 @@ public class Room extends AppCompatActivity {
                 if (room_name.equals("") == true){
                     request_room_name();
                 }
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put(room_name, "");
-                root.updateChildren(map);
+
             }
         });
 
@@ -122,7 +120,7 @@ public class Room extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Room.this, MainActivity2.class));
+                startActivity(new Intent(Room.this, MainActivity.class));
                 finish();
             }
         });
@@ -140,6 +138,9 @@ public class Room extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 room_name = input_field.getText().toString();
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put(room_name, "");
+                root.updateChildren(map);
             }
         });
 
