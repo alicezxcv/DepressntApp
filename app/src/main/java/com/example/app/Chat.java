@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,8 @@ import java.util.Map;
 
 public class Chat extends AppCompatActivity {
 
-    private Button btn_send_msg;
+    private ImageButton btn_send_msg;
+    private ImageButton back;
     private EditText input_msg;
     private ListView chat_conversation;
 
@@ -52,10 +54,10 @@ public class Chat extends AppCompatActivity {
 
         adapter = new ArrayAdapter<String>(Chat.this, android.R.layout.simple_list_item_1, arrayList);
 
-        btn_send_msg = (Button) findViewById(R.id.btn_send);
+        btn_send_msg = (ImageButton) findViewById(R.id.btn_send);
         input_msg = (EditText) findViewById(R.id.msg_input);
         chat_conversation = (ListView) findViewById(R.id.messagesContainer);
-
+        back = (ImageButton) findViewById(R.id.back);
 
         // Here, you set the data in your ListView
         chat_conversation.setAdapter(adapter);
@@ -114,6 +116,14 @@ public class Chat extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Chat.this, Room.class));
+                finish();
             }
         });
     }
