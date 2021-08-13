@@ -32,13 +32,15 @@ import java.util.Map;
 public class Chat extends AppCompatActivity {
 
     private ImageButton btn_send_msg;
-    private ImageButton back;
+    private ImageButton backBtn;
     private EditText input_msg;
     private ListView chat_conversation;
 
     private String user_name,room_name;
     private DatabaseReference root;
     private String tmp_key;
+
+    private TextView room_name_header;
 
     private ArrayAdapter<String> adapter;
     private ArrayList<String> arrayList;
@@ -57,7 +59,8 @@ public class Chat extends AppCompatActivity {
         btn_send_msg = (ImageButton) findViewById(R.id.btn_send);
         input_msg = (EditText) findViewById(R.id.msg_input);
         chat_conversation = (ListView) findViewById(R.id.messagesContainer);
-        back = (ImageButton) findViewById(R.id.back);
+        backBtn = (ImageButton) findViewById(R.id.back);
+        room_name_header = findViewById(R.id.header);
 
         // Here, you set the data in your ListView
         chat_conversation.setAdapter(adapter);
@@ -66,8 +69,9 @@ public class Chat extends AppCompatActivity {
         user_name = getIntent().getExtras().get("user_name").toString();
         room_name =getIntent().getExtras().get("room_name").toString();
         setTitle(" Room - " + room_name);
+        room_name_header.setText(room_name);
 
-        root = FirebaseDatabase.getInstance().getReference().child(room_name);
+        root = FirebaseDatabase.getInstance().getReference().child("Room").child(room_name);
 
         btn_send_msg.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -90,6 +94,7 @@ public class Chat extends AppCompatActivity {
                 }
             }
         });
+
 
         root.addChildEventListener(new ChildEventListener() {
 
@@ -119,10 +124,11 @@ public class Chat extends AppCompatActivity {
             }
         });
 
-        back.setOnClickListener(new View.OnClickListener() {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Chat.this, Room.class));
+                Intent intent= new Intent(getApplicationContext(),Room.class);
+                intent.putExtra("user_name",user_name);
                 finish();
             }
         });
