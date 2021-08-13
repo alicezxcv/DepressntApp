@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private TextView signInbtn;
     private static final String TAG = "GOOGLE_SIGN_IN_TAG";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
