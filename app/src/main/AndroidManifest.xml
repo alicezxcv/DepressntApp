@@ -17,17 +17,19 @@
         <activity android:name=".ViewVideo" />
         <activity
             android:name=".admin_login"
-            android:theme="@style/Theme.App.LogIn_Background" />
-        <activity android:name=".Chat" />
-        <activity android:name=".Room" />
-        <activity android:name=".MainActivity2" />
+            />
+        <activity android:name=".Chat"
+            />
+        <activity android:name=".Room"
+            />
+        <activity android:name=".MainActivity2"
+            />
         <activity android:name=".ProfileActivity2" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.App.LogIn_Background">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
