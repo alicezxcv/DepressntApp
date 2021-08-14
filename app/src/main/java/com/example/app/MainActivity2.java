@@ -19,7 +19,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     private ActivityMainScreenBinding binding;
     private String _name;
-    private String android_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +36,16 @@ public class MainActivity2 extends AppCompatActivity {
 
                 startActivity(new Intent(MainActivity2.this, ViewVideo.class));
 
+            }
+        });
+
+        // handle click journal image button
+        binding.journalBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                // start journal activity
+                startActivity(new Intent(MainActivity2.this,JournalList.class));
+                
             }
         });
 
