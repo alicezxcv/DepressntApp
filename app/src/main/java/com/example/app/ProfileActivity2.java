@@ -1,8 +1,11 @@
 package com.example.app;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -43,6 +46,27 @@ public class ProfileActivity2 extends AppCompatActivity {
                 Intent intent= new Intent(getApplicationContext(),Room.class);
                 intent.putExtra("user_name","Admin");
                 startActivity(intent);
+            }
+        });
+        //handle click edit video button
+        binding.editVideoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity2.this);
+                builder.setCancelable(true);
+                builder.setTitle("Note");
+                builder.setMessage("Make sure you login in admin google account with:\n Gmail: depressnt04@gmail.com\n Password: admin@123&");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String url = "https://www.youtube.com/playlist?list=PLkeWA6p8tvCh6cSi4wiQOqL7VHQ0mdrX-";
+                        Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
+                        myWebLink.setData(Uri.parse(url));
+
+                        startActivity(myWebLink);
+                    }
+                });
+                builder.show();
             }
         });
     }
