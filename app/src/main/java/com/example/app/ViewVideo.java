@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class ViewVideo extends AppCompatActivity {
 
     public static String API_KEY = "AIzaSyD8Qo5urAoTIA4j4D3TuozO-Zj993mgNvo";
-    String ID_PLAYLIST = "PLTs2X3o1FkzRKQOJbUTvDjdp2-7SG2ULa";
+    String ID_PLAYLIST = "PLkeWA6p8tvCh6cSi4wiQOqL7VHQ0mdrX-";
     String urlGetJson = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId="+ ID_PLAYLIST +"&key="+ API_KEY +"&maxResults=50";
 
     ListView lvVideo;
