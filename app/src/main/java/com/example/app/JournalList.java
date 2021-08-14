@@ -107,6 +107,14 @@ public class JournalList extends AppCompatActivity {
                 return false;
             }
         });
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(JournalList.this, MainActivity2.class));
+                finish();
+            }
+        });
     }
 
     public void deleteJournal(String entry){

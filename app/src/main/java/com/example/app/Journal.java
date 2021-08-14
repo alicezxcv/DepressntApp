@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,12 +21,19 @@ import java.io.IOException;
 
 public class Journal extends AppCompatActivity {
     private ActivityJournalBinding binding;
+    private String journal_name;
+    private TextView journal_header;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityJournalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         loadJournalFromFile(getIntent().getExtras().get("entry_title").toString());
+
+        journal_name = getIntent().getExtras().get("entry_title").toString();
+        journal_header = (TextView) findViewById(R.id.header);
+
+        journal_header.setText(journal_name);
 
         binding.saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +42,13 @@ public class Journal extends AppCompatActivity {
                 writeJournalToFile(pgraph,getIntent().getExtras().get("entry_title").toString());
             }
         });
-
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Journal.this, JournalList.class));
+                finish();
+            }
+        });
     }
 
     public void writeJournalToFile(String pgraph, String entry_title){
