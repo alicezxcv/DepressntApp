@@ -151,6 +151,8 @@ public class JournalList extends AppCompatActivity {
             }
         }
         // also delete <entry>.txt...
+        File delFile = new File(path,entry+".txt");
+        boolean deleted = delFile.delete();
     }
 
     public void loadJournal(){
@@ -174,7 +176,9 @@ public class JournalList extends AppCompatActivity {
             in = new BufferedReader(new FileReader(file));
 
             while ((line = in.readLine()) != null) {
-                list_of_journals.add(line);
+                if (!list_of_journals.contains(line)) {
+                    list_of_journals.add(line);
+                }
             }
 
         } catch (FileNotFoundException e) {
