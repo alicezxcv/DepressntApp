@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Room"
+    tools:context=".JournalList"
     android:orientation="vertical"
     android:background="@color/sky_blue">
 
@@ -32,7 +32,7 @@
             android:background="@drawable/room_list"
             android:layout_marginTop="10dp"/>
         <ImageButton
-            android:id="@+id/btn_add_room"
+            android:id="@+id/btn_add_journal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/add_room"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="24dp"
-                android:text="Room"
+                android:text="Journal Adventure"
                 android:textColor="@color/purple"
                 android:textSize="24sp"
                 android:fontFamily="sans-serif-light"/>
@@ -65,5 +65,4 @@
                 android:scrollbars="none"/>
         </RelativeLayout>
     </RelativeLayout>
-
 </LinearLayout>
