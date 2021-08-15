@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,12 +26,13 @@ import java.util.ArrayList;
 public class ViewVideo extends AppCompatActivity {
 
     public static String API_KEY = "AIzaSyD8Qo5urAoTIA4j4D3TuozO-Zj993mgNvo";
-    String ID_PLAYLIST = "PLTs2X3o1FkzRKQOJbUTvDjdp2-7SG2ULa";
+    String ID_PLAYLIST = "PLkeWA6p8tvCh6cSi4wiQOqL7VHQ0mdrX-";
     String urlGetJson = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId="+ ID_PLAYLIST +"&key="+ API_KEY +"&maxResults=50";
 
     ListView lvVideo;
     ArrayList<VideoYoutube> arrayVideo;
     VideoAdapter adapter;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class ViewVideo extends AppCompatActivity {
         arrayVideo = new ArrayList<>();
         adapter = new VideoAdapter(this, R.layout.row, arrayVideo);
         lvVideo.setAdapter(adapter);
-
+        back = (ImageButton) findViewById(R.id.back);
 
         GetJsonYoutube(urlGetJson);
         lvVideo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -50,6 +52,14 @@ public class ViewVideo extends AppCompatActivity {
                 Intent intent = new Intent(ViewVideo.this, PlayVideo.class);
                 intent.putExtra("IdVideoYoutube", arrayVideo.get(position).getIdVideo());
                 startActivity(intent);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ViewVideo.this, MainActivity2.class));
+                finish();
             }
         });
     }

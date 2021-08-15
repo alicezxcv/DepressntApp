@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <RelativeLayout
         android:id="@+id/pfp"
@@ -25,6 +26,13 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight= "16dp"
             android:layout_centerVertical="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title"
+            android:layout_centerInParent="true"
+            android:scaleX="0.7"
+            android:scaleY="0.7"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -73,8 +81,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/daily_test_shadow"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"/>
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"/>
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,16 +106,19 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/daily_illus"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="74dp"
-                    android:layout_marginRight="24dp"/>
+                    android:layout_marginTop="77dp"
+                    android:layout_marginRight="10dp"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/daily_test_btn"
                     android:layout_below="@id/daily_greet"
                     android:layout_marginTop="12dp"
-                    android:layout_marginLeft="24dp"
-                    android:scaleType="centerCrop"/>
+                    android:layout_marginLeft="16dp"
+                    android:scaleType="centerCrop"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    />
             </RelativeLayout>
         </FrameLayout>
     </RelativeLayout>
@@ -132,9 +143,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/categories"
-            android:layout_centerHorizontal="true"
+
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="12dp"
             android:useDefaultMargins="true"
             android:rowCount="2"
             android:columnCount="4">

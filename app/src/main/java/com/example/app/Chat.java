@@ -78,7 +78,7 @@ public class Chat extends AppCompatActivity {
             public void onClick(View view){
                 if(input_msg.getText().toString().isEmpty() || input_msg.getText().toString().trim().isEmpty())
                 {
-                    Toast.makeText(Chat.this, "Please enter something!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Chat.this, "Please enter something", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Map<String, Object> map = new HashMap<String, Object>();

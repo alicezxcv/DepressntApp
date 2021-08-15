@@ -4,12 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewVideo">
+    tools:context=".ViewVideo"
+    android:orientation="vertical"
+    android:background="@color/sky_blue">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_btn"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
+        />
 
     <ListView
-        android:layout_marginTop="20sp"
         android:id="@+id/listviewVideo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="8dp"
+        android:background="@color/sky_blue"
+        android:layout_marginTop="20dp"
+        android:fadingEdge="vertical"
+        />
 
 </LinearLayout>
