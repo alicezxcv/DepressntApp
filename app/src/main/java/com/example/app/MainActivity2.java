@@ -1,6 +1,11 @@
 package com.example.app;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.ActivityOptions;
 import android.app.AlertDialog;
@@ -9,17 +14,27 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import com.example.app.databinding.ActivityMainScreenBinding;
 
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity2 extends AppCompatActivity {
+
+public class MainActivity2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ActivityMainScreenBinding binding;
+
+    // View Variables
     private String _name;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +62,62 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        /*---------------NAVIGATION DRAWER---------------*/
+
+        /*---------------Hooks---------------*/
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.pfp_nav);
+        toolbar = findViewById(R.id.pfp);
+
+        /*---------------Toolbar---------------*/
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(R.drawable.user_pfp);
+
+        /*---------------Navigation Drawer Menu---------------*/
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        /*---------------Navigation Element View---------------*/
+        NavigationView navigationView = findViewById(R.id.pfp_nav);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.nav_chat:
+                startActivity(new Intent(MainActivity2.this, Room.class));
+                finish();
+                break;
 
+            case R.id.nav_help:
+                Toast.makeText(MainActivity2.this, "Please help!", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.nav_about:
+                Toast.makeText(MainActivity2.this, "19127327_19127428_19127555", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.nav_bug:
+                Toast.makeText(MainActivity2.this, "Reported!", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.nav_logout:
+                startActivity(new Intent(MainActivity2.this, MainActivity.class));
+                break;
+
+        }
+        return true;
+    }
 
     private void request_name(){
         try{
@@ -96,7 +164,12 @@ public class MainActivity2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
         startActivity(new Intent(MainActivity2.this, MainActivity.class));
         finish();
+        }
     }
 }
