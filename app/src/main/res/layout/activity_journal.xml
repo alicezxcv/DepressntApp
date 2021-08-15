@@ -20,15 +20,16 @@
             android:layout_height="wrap_content"
             android:background="@drawable/back_btn"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="4dp"/>
+            android:layout_gravity="center_vertical"/>
         <TextView
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Journal Name"
+            android:layout_gravity="center"
+            android:text="Journal Adventure"
             android:textColor="@color/white"
             android:textSize="24sp"
+            android:textAlignment="center"
             android:fontFamily="sans-serif-light"
             android:layout_marginEnd="38dp"/>
     </LinearLayout>

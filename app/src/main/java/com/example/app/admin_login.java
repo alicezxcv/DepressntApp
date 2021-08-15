@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.app.databinding.ActivityAdminLoginBinding;
-import com.example.app.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -24,16 +23,6 @@ public class admin_login extends AppCompatActivity {
     private EditText mEmail, mPass;
     private Button signInbtn;
     private FirebaseAuth firebaseAuth;
-
-    public void disableClipOnParents(View v) {
-        if (v == null) {
-            return;
-        }
-        if (v instanceof ViewGroup) {
-            ((ViewGroup) v).setClipChildren(false);
-        }
-        disableClipOnParents((View) v.getParent());
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +49,7 @@ public class admin_login extends AppCompatActivity {
 
     public void onClick1(View v){
         startActivity(new Intent(admin_login.this,MainActivity.class));
+        overridePendingTransition(R.anim.out_to_left, R.anim.in_from_right);
         finish();
     }
 

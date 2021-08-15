@@ -8,11 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +25,6 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private TextView signInbtn;
     private static final String TAG = "GOOGLE_SIGN_IN_TAG";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,22 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void disableClipOnParents(View v) {
-        if (v == null) {
-            return;
-        }
-        if (v instanceof ViewGroup) {
-            ((ViewGroup) v).setClipChildren(false);
-        }
-        disableClipOnParents((View) v.getParent());
-    }
-
     public void onClick(View v){
         startActivity(new Intent(MainActivity.this,admin_login.class));
+        overridePendingTransition(R.anim.out_to_right, R.anim.in_from_left);
         finish();
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
