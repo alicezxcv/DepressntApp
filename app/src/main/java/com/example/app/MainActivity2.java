@@ -2,6 +2,7 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -33,9 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 /// start activity to youtube player
-
                 startActivity(new Intent(MainActivity2.this, ViewVideo.class));
-
             }
         });
 
@@ -44,8 +43,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 // start journal activity
-                startActivity(new Intent(MainActivity2.this,JournalList.class));
-                
+                startActivity(new Intent(MainActivity2.this, JournalList.class));
             }
         });
 

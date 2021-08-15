@@ -14,16 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.App.Chat_Background">
-        <item name="android:windowBackground">@color/purple_blue</item>
-    </style>
-
-    <style name="Theme.App.LogIn_Background">
-        <item name="android:windowBackground">@color/white</item>
-    </style>
-
-    <style name="Theme.App.Main_Background">
-        <item name="android:windowBackground">@drawable/main_bg</item>
-    </style>
-
 </resources>
