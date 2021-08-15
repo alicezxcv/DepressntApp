@@ -57,6 +57,9 @@ public class MainActivity2 extends AppCompatActivity {
         try{
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
             String _name = preferences.getString("Name", "");
+            if (_name.equals("")){
+                throw new Exception();
+            }
             binding.name.setText(_name);
         }
         catch (Exception e){
