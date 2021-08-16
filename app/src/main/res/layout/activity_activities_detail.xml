@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/sky_blue"
+
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:contentPadding="5dp"
+    app:cardUseCompatPadding="true"
+    tools:context=".ActivitiesDetail">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_btn"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/dTitleTv"
+            android:text="Title"
+            android:textSize="22sp"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dImageView"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dDescriptionTv"
+            android:textSize="20sp"
+            android:text="This is description"
+            android:scrollbars = "vertical"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

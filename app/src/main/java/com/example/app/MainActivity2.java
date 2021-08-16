@@ -50,6 +50,18 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             public void onClick(View view) {
                 /// start activity to youtube player
                 startActivity(new Intent(MainActivity2.this, ViewVideo.class));
+
+
+            }
+        });
+        // handle click activities image button
+        binding.activitiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /// start activity to healthy activities
+
+                startActivity(new Intent(MainActivity2.this, HealthyActivities.class));
+
             }
         });
 
@@ -58,9 +70,11 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view){
                 // start journal activity
-                startActivity(new Intent(MainActivity2.this, JournalList.class));
+                startActivity(new Intent(MainActivity2.this,JournalList.class));
+
             }
         });
+
 
         /*---------------NAVIGATION DRAWER---------------*/
 

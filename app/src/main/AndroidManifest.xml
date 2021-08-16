@@ -18,8 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
+
+        <activity android:name=".ActivitiesDetail"></activity>
+        <activity android:name=".HealthyActivities" />
+       
         <activity android:name=".Journal"></activity>
         <activity android:name=".JournalList" />
+
         <activity
             android:name=".PlayVideo"
             android:configChanges="orientation|screenSize" />
