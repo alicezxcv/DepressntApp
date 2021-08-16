@@ -35,6 +35,8 @@ public class Journal extends AppCompatActivity {
 
         journal_header.setText(journal_name);
 
+        binding.journalText.setSelection(binding.journalText.getText().length());
+
         binding.saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

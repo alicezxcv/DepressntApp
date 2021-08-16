@@ -101,7 +101,6 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         NavigationView navigationView = findViewById(R.id.pfp_nav);
         navigationView.setNavigationItemSelectedListener(this);
 
-
     }
 
     @Override
