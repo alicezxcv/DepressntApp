@@ -138,7 +138,7 @@ public class JournalList extends AppCompatActivity {
             }
 
         } catch (FileNotFoundException e) {
-            Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
         }

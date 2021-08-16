@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,7 +56,7 @@ public class Journal extends AppCompatActivity {
         File file = new File(path,entry_title+".txt");
         if (file.exists()) {
             try {
-                FileWriter writer = new FileWriter(file,false);
+                FileWriter writer = new FileWriter(file,true);
                 writer.append(pgraph);
                 writer.flush();
                 writer.close();
