@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,25 +35,25 @@ import java.util.Set;
 
 public class Room extends AppCompatActivity {
 
-    private Button add_room;
-    private EditText room_name;
+    private ImageButton add_room;
+    private ImageButton back;
+    private String room_name;
     private ListView listView;
     private ArrayAdapter<String> arrayAdapter;
     private ArrayList<String> list_of_rooms = new ArrayList<>();
     private String name;
-    private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
+    private DatabaseReference root = FirebaseDatabase.getInstance().getReference().child("Room");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
 
-        add_room = (Button) findViewById(R.id.btn_add_room);
-        room_name = (EditText) findViewById(R.id.room_name_edittext);
+        add_room = (ImageButton) findViewById(R.id.btn_add_room);
         listView = (ListView) findViewById(R.id.listView);
+        back = (ImageButton) findViewById(R.id.back);
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_of_rooms);
-
         listView.setAdapter(arrayAdapter);
 
         try {
@@ -70,9 +71,17 @@ public class Room extends AppCompatActivity {
         add_room.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put(room_name.getText().toString(), "");
-                root.updateChildren(map);
+                try {
+                    room_name = getIntent().getExtras().get("room_name").toString();
+                }
+                catch (Exception e){
+                    Toast.makeText(Room.this, "Make you own room", Toast.LENGTH_SHORT).show();
+                    room_name = "";
+                }
+                if (room_name.equals("") == true){
+                    request_room_name();
+                }
+
             }
         });
 
@@ -107,6 +116,42 @@ public class Room extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Room.this, MainActivity.class));
+                finish();
+            }
+        });
+    }
+
+    private void request_room_name() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle("Enter room's name:");
+
+        final EditText input_field = new EditText(this);
+        builder.setView(input_field);
+
+        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                room_name = input_field.getText().toString();
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put(room_name, "");
+                root.updateChildren(map);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+
+        builder.show();
     }
 
     private void request_user_name() {

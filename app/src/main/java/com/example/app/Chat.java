@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,13 +31,16 @@ import java.util.Map;
 
 public class Chat extends AppCompatActivity {
 
-    private Button btn_send_msg;
+    private ImageButton btn_send_msg;
+    private ImageButton backBtn;
     private EditText input_msg;
     private ListView chat_conversation;
 
     private String user_name,room_name;
     private DatabaseReference root;
     private String tmp_key;
+
+    private TextView room_name_header;
 
     private ArrayAdapter<String> adapter;
     private ArrayList<String> arrayList;
@@ -52,10 +56,11 @@ public class Chat extends AppCompatActivity {
 
         adapter = new ArrayAdapter<String>(Chat.this, android.R.layout.simple_list_item_1, arrayList);
 
-        btn_send_msg = (Button) findViewById(R.id.btn_send);
+        btn_send_msg = (ImageButton) findViewById(R.id.btn_send);
         input_msg = (EditText) findViewById(R.id.msg_input);
         chat_conversation = (ListView) findViewById(R.id.messagesContainer);
-
+        backBtn = (ImageButton) findViewById(R.id.back);
+        room_name_header = findViewById(R.id.header);
 
         // Here, you set the data in your ListView
         chat_conversation.setAdapter(adapter);
@@ -64,15 +69,16 @@ public class Chat extends AppCompatActivity {
         user_name = getIntent().getExtras().get("user_name").toString();
         room_name =getIntent().getExtras().get("room_name").toString();
         setTitle(" Room - " + room_name);
+        room_name_header.setText(room_name);
 
-        root = FirebaseDatabase.getInstance().getReference().child(room_name);
+        root = FirebaseDatabase.getInstance().getReference().child("Room").child(room_name);
 
         btn_send_msg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 if(input_msg.getText().toString().isEmpty() || input_msg.getText().toString().trim().isEmpty())
                 {
-                    Toast.makeText(Chat.this, "Please enter something!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Chat.this, "Please enter something", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Map<String, Object> map = new HashMap<String, Object>();
@@ -88,6 +94,7 @@ public class Chat extends AppCompatActivity {
                 }
             }
         });
+
 
         root.addChildEventListener(new ChildEventListener() {
 
@@ -114,6 +121,15 @@ public class Chat extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(),Room.class);
+                intent.putExtra("user_name",user_name);
+                finish();
             }
         });
     }

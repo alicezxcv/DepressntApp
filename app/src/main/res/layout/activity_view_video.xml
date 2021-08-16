@@ -4,12 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewVideo">
+    tools:context=".ViewVideo"
+    android:orientation="vertical"
+    android:background="@color/purple_blue">
 
-    <ListView
-        android:layout_marginTop="20sp"
-        android:id="@+id/listviewVideo"
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_btn"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <ListView
+            android:id="@+id/listviewVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="24dp"
+            android:background="@drawable/border_radius"
+            android:backgroundTint="@color/purple_blue"
+            android:fadingEdge="vertical"
+            android:scrollbars="none"
+            android:paddingTop="12dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="12dp"
+            />
+    </LinearLayout>
 
 </LinearLayout>

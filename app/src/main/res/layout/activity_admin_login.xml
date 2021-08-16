@@ -28,10 +28,8 @@
             android:id="@+id/holder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/holder"
-            android:layout_marginStart="-366dp"
-            android:scaleType="centerCrop"
-            android:paddingEnd="50dp"/>
+            android:src="@drawable/r_holder"
+            android:paddingStart="16dp"/>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

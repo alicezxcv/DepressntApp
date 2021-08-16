@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JournalList"
+    android:orientation="vertical"
+    android:background="@color/purple_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_weight="0">
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_btn"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Journal Adventure"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginEnd="38dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="388dp"
+            android:background="@drawable/diary_list"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="38dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="316dp"
+                android:layout_height="400dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="-20dp"
+                android:divider="@null"
+                android:dividerHeight="10dp"
+                android:scrollbars="none" />
+        </RelativeLayout>
+        <ImageButton
+            android:id="@+id/btn_add_journal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/add_journal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="374dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keep a diary, and someday it'll keep you."
+        android:textAlignment="center"
+        android:paddingTop="4dp"
+        android:layout_weight="2"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/diary_illus"
+        android:layout_marginTop="16dp"
+        android:layout_weight="0"
+        android:layout_gravity="fill_vertical"
+        android:layout_marginLeft="62dp"
+        />
+
+</LinearLayout>

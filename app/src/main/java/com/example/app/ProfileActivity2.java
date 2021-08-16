@@ -87,4 +87,10 @@ public class ProfileActivity2 extends AppCompatActivity {
             binding.emailTv.setText((email));
         }
     }
+
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(ProfileActivity2.this, admin_login.class));
+        finish();
+    }
 }

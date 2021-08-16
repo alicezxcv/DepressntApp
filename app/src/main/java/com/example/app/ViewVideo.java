@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class ViewVideo extends AppCompatActivity {
     ListView lvVideo;
     ArrayList<VideoYoutube> arrayVideo;
     VideoAdapter adapter;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class ViewVideo extends AppCompatActivity {
         arrayVideo = new ArrayList<>();
         adapter = new VideoAdapter(this, R.layout.row, arrayVideo);
         lvVideo.setAdapter(adapter);
-
+        back = (ImageButton) findViewById(R.id.back);
 
         GetJsonYoutube(urlGetJson);
         lvVideo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -52,6 +54,19 @@ public class ViewVideo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ViewVideo.this, MainActivity2.class));
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(ViewVideo.this, MainActivity2.class));
+        finish();
     }
 
     private void GetJsonYoutube(String url){
