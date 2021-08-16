@@ -88,13 +88,13 @@ public class HealthyActivities extends AppCompatActivity {
 
                         String mTitle = mTitleTv.getText().toString();
                         String mDetail = mDetailTv.getText().toString();
-                        Drawable mDrawable = mImageTv.getDrawable();
-                        Bitmap mBitmap = ((BitmapDrawable)mDrawable).getBitmap();
+//                        Drawable mDrawable = mImageTv.getDrawable();
+//                        Bitmap mBitmap = ((BitmapDrawable)mDrawable).getBitmap();
 
 
                         Intent intent = new Intent(HealthyActivities.this, ActivitiesDetail.class);
-                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 
 //                        intent.putExtra("image", stream.toByteArray());
                         intent.putExtra("title", mTitle);
