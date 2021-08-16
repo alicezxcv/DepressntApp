@@ -12,8 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
+<<<<<<< Updated upstream
         <activity android:name=".PlayVideo"
             android:configChanges="orientation|screenSize"></activity>
+=======
+        <activity android:name=".ActivitiesDetail"></activity>
+        <activity android:name=".HealthyActivities" />
+        <activity android:name=".Journal" />
+        <activity android:name=".JournalList" />
+        <activity
+            android:name=".PlayVideo"
+            android:configChanges="orientation|screenSize" />
+>>>>>>> Stashed changes
         <activity android:name=".ViewVideo" />
         <activity
             android:name=".admin_login"

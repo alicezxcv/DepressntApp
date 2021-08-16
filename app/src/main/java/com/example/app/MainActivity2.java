@@ -25,6 +25,29 @@ public class MainActivity2 extends AppCompatActivity {
                 /// start activity to youtube player
 
                 startActivity(new Intent(MainActivity2.this, ViewVideo.class));
+<<<<<<< Updated upstream
+=======
+
+            }
+        });
+        // handle click activities image button
+        binding.activitiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /// start activity to healthy activities
+
+                startActivity(new Intent(MainActivity2.this, HealthyActivities.class));
+
+            }
+        });
+
+        // handle click journal image button
+        binding.journalBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                // start journal activity
+                startActivity(new Intent(MainActivity2.this,JournalList.class));
+>>>>>>> Stashed changes
                 
 
             }
