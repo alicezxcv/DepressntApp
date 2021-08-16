@@ -72,7 +72,7 @@ public class Schedule extends AppCompatActivity {
                 binding.compactcalendarView.removeEvents(selectedDate.getTime());
                 deleteEvent(simpleDatev2.format(selectedDate));
                 Toast.makeText(Schedule.this, "Saved", Toast.LENGTH_SHORT).show();
-                //binding.noteEditText.setText("");
+                binding.noteEditText.setText("");
             }
         });
 
