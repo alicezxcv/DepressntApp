@@ -3,7 +3,6 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -141,7 +140,7 @@ public class Chat extends AppCompatActivity {
             chat_msg= (String) ((DataSnapshot)i.next()).getValue();
             chat_user_name= (String) ((DataSnapshot)i.next()).getValue();
 
-            arrayList.add(chat_user_name+ "\n" +chat_msg);
+            arrayList.add("@" + chat_user_name + "\n" +chat_msg);
             adapter.notifyDataSetChanged();
             //adapter.add(chat_user_name+ " : "+chat_msg);
             //chat_conversation.(chat_user_name+ " : "+chat_msg+"\n");

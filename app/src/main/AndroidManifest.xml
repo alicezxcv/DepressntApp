@@ -30,7 +30,8 @@
             android:configChanges="orientation|screenSize" />
         <activity android:name=".ViewVideo" />
         <activity android:name=".admin_login" />
-        <activity android:name=".Chat" />
+        <activity android:name=".Chat"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
         <activity android:name=".Room" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".ProfileActivity2" />
@@ -41,6 +42,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

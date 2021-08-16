@@ -4,37 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_login"
     android:clipChildren="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".admin_login">
 
     <ImageView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
         android:layout_gravity="center"
-        android:layout_weight="1"/>
+        android:layout_marginTop="64dp"
+        android:layout_weight="1"
+        android:src="@drawable/title" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:gravity="center"
-        android:layout_weight="4">
+        android:layout_weight="4"
+        android:gravity="center">
+
         <ImageView
             android:id="@+id/holder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/r_holder"
-            android:paddingStart="16dp"/>
+            android:paddingStart="16dp"
+            android:src="@drawable/r_holder" />
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true">
+
             <EditText
                 android:id="@+id/user"
                 android:layout_width="wrap_content"
@@ -47,7 +50,8 @@
                 android:maxLines="1"
                 android:paddingLeft="15dp"
                 android:textColorHint="@color/purple_blue"
-                android:textSize="12dp"/>
+                android:textSize="12dp" />
+
             <EditText
                 android:id="@+id/pass"
                 android:layout_width="wrap_content"
@@ -58,42 +62,48 @@
                 android:background="@drawable/pass"
                 android:hint="Password"
                 android:inputType="textPassword"
+                android:maxLines="1"
                 android:paddingLeft="15dp"
                 android:textColorHint="@color/purple_blue"
-                android:textSize="12dp"
-                android:maxLines="1"/>
+                android:textSize="12dp" />
+
             <Button
                 android:id="@+id/adminloginbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+                android:layout_width="262dp"
+                android:layout_height="30dp"
                 android:layout_below="@id/pass"
-                android:layout_marginTop="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="28dp"
                 android:background="@drawable/admin"
-                android:scaleY="0.65"
-                android:textScaleX="0.65"
+                android:fontFamily="@font/roboto_medium"
                 android:text="Log in as admin"
-                android:textColor="@color/white"/>
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+
+                />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/admin_shadow"
                 android:layout_below="@id/pass"
-                android:layout_marginTop="27dp"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/admin_shadow" />
+
             <TextView
                 android:id="@+id/goto_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/adminloginbtn"
-                android:layout_marginTop="12dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:alpha="0.5"
+                android:clickable="true"
+                android:onClick="onClick1"
                 android:text="Go to User dashboard"
-                android:textSize="12sp"
                 android:textAllCaps="false"
                 android:textColor="@color/CTA_purple"
-                android:clickable="true"
-                android:onClick="onClick1"/>
+                android:textSize="12sp" />
         </RelativeLayout>
     </RelativeLayout>
 
@@ -102,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:scaleType="fitEnd"
+        android:layout_weight="0"
         android:background="@drawable/illus"
-        android:layout_weight="0"/>
+        android:scaleType="fitEnd" />
 </LinearLayout>

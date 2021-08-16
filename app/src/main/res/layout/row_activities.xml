@@ -4,9 +4,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="#fff"
-    app:cardCornerRadius="3dp"
-    app:cardElevation="3dp"
-    app:contentPadding="5dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="8dp"
+    app:contentPadding="8dp"
     app:cardUseCompatPadding="true">
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,8 +31,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/rDescriptionTv"
-            android:textSize="20sp"
-            android:text="This is description"/>
+            android:textSize="16sp"
+            android:text="This is description"
+            android:layout_marginTop="12dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
