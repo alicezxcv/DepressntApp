@@ -23,6 +23,8 @@
         <activity android:name=".HealthyActivities" />
        
         <activity android:name=".Journal"></activity>
+        <activity android:name=".Schedule"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity android:name=".JournalList" />
 
         <activity

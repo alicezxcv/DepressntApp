@@ -65,6 +65,15 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             }
         });
 
+        // handle click schedule image button
+        binding.scheduleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity2.this,Schedule.class));
+            }
+        });
+
+
         // handle click journal image button
         binding.journalBtn.setOnClickListener(new View.OnClickListener(){
             @Override
