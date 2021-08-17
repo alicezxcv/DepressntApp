@@ -31,17 +31,28 @@
             android:layout_marginEnd="38dp"
             android:layout_weight="0"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Recommended Psychiatrists"
+                android:text="Psychiatrists"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Contact with the professionals\nIf anything happens, it's not our fault !"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>
 
@@ -49,9 +60,9 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="50dp"
         android:layout_weight="0"
         android:clickable="false"

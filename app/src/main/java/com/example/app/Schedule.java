@@ -5,6 +5,7 @@ import com.example.app.databinding.ActivityScheduleBinding;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -87,7 +88,6 @@ public class Schedule extends AppCompatActivity {
             }
         });
 
-
         binding.compactcalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
@@ -107,6 +107,13 @@ public class Schedule extends AppCompatActivity {
             }
         });
 
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Schedule.this, MainActivity2.class));
+                finish();
+            }
+        });
     }
 
     public void writeEventToFile(String date, String note) {
@@ -202,5 +209,11 @@ public class Schedule extends AppCompatActivity {
             writer.close();
         } catch (IOException e) {
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(Schedule.this, ProfileActivity2.class));
+        finish();
     }
 }

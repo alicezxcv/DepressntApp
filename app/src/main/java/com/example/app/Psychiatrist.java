@@ -58,7 +58,7 @@ public class Psychiatrist extends AppCompatActivity {
         FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Model, ActivitiesViewHolder>(
                         Model.class,
-                        R.layout.row_activities,
+                        R.layout.row_psychiatrist,
                         ActivitiesViewHolder.class,
                         mRef
                 ) {
