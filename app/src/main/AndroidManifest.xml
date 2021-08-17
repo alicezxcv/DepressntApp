@@ -18,22 +18,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".ActivitiesDetail"></activity>
+        <activity android:name=".Psychiatrist"></activity>
+        <activity android:name=".ActivitiesDetail" />
         <activity android:name=".HealthyActivities" />
-       
-        <activity android:name=".Journal"></activity>
-        <activity android:name=".Schedule"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name=".Journal" />
+        <activity
+            android:name=".Schedule"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".JournalList" />
-
         <activity
             android:name=".PlayVideo"
             android:configChanges="orientation|screenSize" />
         <activity android:name=".ViewVideo" />
         <activity android:name=".admin_login" />
-        <activity android:name=".Chat"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity
+            android:name=".Chat"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity android:name=".Room" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".ProfileActivity2" />

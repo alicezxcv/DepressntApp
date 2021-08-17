@@ -44,14 +44,21 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
 
         request_name();
 
+        // handle click psychiatrist image button
+        binding.psychiatristBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity2.this,Psychiatrist.class));
+            }
+        });
+
+
         // handle click video image button
         binding.videoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /// start activity to youtube player
                 startActivity(new Intent(MainActivity2.this, ViewVideo.class));
-
-
             }
         });
         // handle click activities image button
@@ -59,9 +66,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view) {
                 /// start activity to healthy activities
-
                 startActivity(new Intent(MainActivity2.this, HealthyActivities.class));
-
             }
         });
 
