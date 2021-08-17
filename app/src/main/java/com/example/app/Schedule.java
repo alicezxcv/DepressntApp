@@ -62,6 +62,7 @@ public class Schedule extends AppCompatActivity {
                     /// save event on file
                     // Toast.makeText(Schedule.this,simpleDatev2.format(selectedDate) , Toast.LENGTH_SHORT).show();
                     writeEventToFile(simpleDatev2.format(selectedDate), binding.noteEditText.getText().toString());
+                    Toast.makeText(Schedule.this, "Saved", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -118,7 +119,6 @@ public class Schedule extends AppCompatActivity {
                 writer.append(note+ "\n");
                 writer.flush();
                 writer.close();
-                Toast.makeText(Schedule.this, "Saved", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 //Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
