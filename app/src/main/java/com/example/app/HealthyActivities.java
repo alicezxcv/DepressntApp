@@ -100,6 +100,7 @@ public class HealthyActivities extends AppCompatActivity {
 //                        intent.putExtra("image", stream.toByteArray());
                         intent.putExtra("title", mTitle);
                         intent.putExtra("detail", mDetail);
+
                         startActivity(intent);
 
                     }

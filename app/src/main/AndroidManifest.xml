@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Psychiatrist"></activity>
+        <activity android:name=".PsychiatristDetail"></activity>
+        <activity android:name=".Psychiatrist" />
         <activity android:name=".ActivitiesDetail" />
         <activity android:name=".HealthyActivities" />
         <activity android:name=".Journal" />

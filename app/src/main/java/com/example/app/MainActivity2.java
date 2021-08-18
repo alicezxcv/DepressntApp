@@ -48,7 +48,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         binding.psychiatristBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity2.this,Psychiatrist.class));
+                Intent intent = new Intent(MainActivity2.this,Psychiatrist.class);
+                intent.putExtra("type","user");
+                startActivity(intent);
             }
         });
 
