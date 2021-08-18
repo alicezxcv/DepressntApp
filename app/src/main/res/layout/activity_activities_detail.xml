@@ -21,7 +21,42 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="16dp"
-            android:background="@drawable/back_btn" />
+            android:background="@drawable/back_btn"
+            android:backgroundTint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="38dp"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Post_name"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="These post are not substitute for professional advice, but general guidance."
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
     </LinearLayout>
 
     <androidx.cardview.widget.CardView

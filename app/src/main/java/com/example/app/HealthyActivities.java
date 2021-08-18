@@ -80,6 +80,30 @@ public class HealthyActivities extends AppCompatActivity {
             @Override
             public ActivitiesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 ActivitiesViewHolder viewHolder = super.onCreateViewHolder(parent, viewType);
+                viewHolder.setOnClickListener(new ActivitiesViewHolder.ClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        TextView mTitleTv = view.findViewById(R.id.rTitleTv);
+                        TextView mDetailTv = view.findViewById(R.id.rContentTv);
+                        ImageView mImageTv = view.findViewById(R.id.rImageView);
+
+                        String mTitle = mTitleTv.getText().toString();
+                        String mDetail = mDetailTv.getText().toString();
+//                        Drawable mDrawable = mImageTv.getDrawable();
+//                        Bitmap mBitmap = ((BitmapDrawable)mDrawable).getBitmap();
+
+
+                        Intent intent = new Intent(HealthyActivities.this, ActivitiesDetail.class);
+//                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+//                        intent.putExtra("image", stream.toByteArray());
+                        intent.putExtra("title", mTitle);
+                        intent.putExtra("detail", mDetail);
+                        startActivity(intent);
+
+                    }
+                });
                 return viewHolder;
             }
         };
