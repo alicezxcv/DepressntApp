@@ -50,7 +50,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="These videos is not a substitute for professional advice, but general guidance."
+                android:text="These videos are not substitute for professional advice, but general guidance."
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="14sp"
