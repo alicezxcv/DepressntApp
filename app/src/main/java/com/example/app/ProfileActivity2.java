@@ -69,6 +69,17 @@ public class ProfileActivity2 extends AppCompatActivity {
                 builder.show();
             }
         });
+
+        // handle click edit psychiatrist button
+        binding.editPsychiatristBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity2.this,Psychiatrist.class);
+                intent.putExtra("type","admin");
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void checkUser() {
