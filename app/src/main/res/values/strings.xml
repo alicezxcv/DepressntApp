@@ -3,4 +3,14 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--Used for PHQ9_Quiz.java as a Question index display-->
+    <string name="question_index_display">Question %1$d</string>
+
+    <!--Clinic: ...\n
+        Location: ...\n
+        Phone number: ...\n
+        Email: ..."-->
+    <string name="psychiatrist_info_edit">Clinic: %1$s\nLocation: %2$s\nPhone number: %3$s\nEmail: %4$s</string>
+
 </resources>

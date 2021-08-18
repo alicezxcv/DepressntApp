@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="stat">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,7 +106,8 @@
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/roboto_medium"
-                        android:text="How are you feeling\ntoday?"
+                        android:text="How have you been feeling\nthe past week?"
+
                         android:textColor="@color/white"
                         android:textSize="24sp" />
 
@@ -120,6 +121,7 @@
                         android:src="@drawable/daily_illus" />
 
                     <Button
+                        android:id="@+id/testBtn"
                         android:layout_width="140dp"
                         android:layout_height="36dp"
                         android:layout_below="@id/daily_greet"
@@ -128,9 +130,10 @@
                         android:background="@drawable/daily_test_btn"
                         android:fontFamily="@font/roboto_medium"
                         android:scaleType="centerCrop"
-                        android:text="Take test"
+                        android:text="Diagnosis"
                         android:textAllCaps="false"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="14dp"/>
                 </RelativeLayout>
             </FrameLayout>
         </RelativeLayout>

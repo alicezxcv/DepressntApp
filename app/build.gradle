@@ -56,7 +56,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.1'
     implementation 'com.firebaseui:firebase-ui-database:0.4.0'
 
-    implementation 'jp.wasabeef:blurry:4.0.0'
+    implementation 'com.github.realpacific:click-shrink-effect:2.0'
     implementation files('libs\\YouTubeAndroidPlayerApi.jar')
     implementation 'org.jetbrains:annotations:15.0'
     testImplementation 'junit:junit:4.13.2'

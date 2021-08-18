@@ -2,7 +2,7 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.app.databinding.ActivityJournalBinding;
-
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +27,9 @@ public class Journal extends AppCompatActivity {
         binding = ActivityJournalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         loadJournalFromFile(getIntent().getExtras().get("entry_title").toString());
+
+        //Button fx
+        new ClickShrinkEffect(binding.saveBtn);
 
         journal_name = getIntent().getExtras().get("entry_title").toString();
         journal_header = (TextView) findViewById(R.id.header);
@@ -60,7 +63,7 @@ public class Journal extends AppCompatActivity {
                 writer.append(pgraph);
                 writer.flush();
                 writer.close();
-                Toast.makeText(Journal.this, "Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Journal.this, "Saved successfully", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
             }

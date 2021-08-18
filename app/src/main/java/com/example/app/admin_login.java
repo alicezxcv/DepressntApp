@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 public class admin_login extends AppCompatActivity {
     private ActivityAdminLoginBinding binding;
@@ -30,10 +31,13 @@ public class admin_login extends AppCompatActivity {
         binding = ActivityAdminLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Button fx
+        new ClickShrinkEffect(binding.gotoUser);
+        new ClickShrinkEffect(binding.adminloginbtn);
+
         mEmail = findViewById(R.id.user);
         mPass = findViewById(R.id.pass);
         signInbtn = findViewById(R.id.adminloginbtn);
-
 
         firebaseAuth = FirebaseAuth.getInstance();
 

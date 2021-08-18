@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.app.databinding.ActivityMainScreenBinding;
 
 import com.google.android.material.navigation.NavigationView;
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 
 public class MainActivity2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,6 +43,17 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         binding = ActivityMainScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Button fx
+        new ClickShrinkEffect(binding.activitiesBtn);
+        //new ClickShrinkEffect(binding.);  Med info
+        new ClickShrinkEffect(binding.videoBtn);
+        //new ClickShrinkEffect(binding.);  Insight
+        new ClickShrinkEffect(binding.psychiatristBtn);
+        new ClickShrinkEffect(binding.scheduleBtn);
+        new ClickShrinkEffect(binding.journalBtn);
+        new ClickShrinkEffect(binding.testBtn);
+
+
         request_name();
 
         // handle click psychiatrist image button
@@ -51,9 +63,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
                 Intent intent = new Intent(MainActivity2.this,Psychiatrist.class);
                 intent.putExtra("type","user");
                 startActivity(intent);
+                finish();
             }
         });
-
 
         // handle click video image button
         binding.videoBtn.setOnClickListener(new View.OnClickListener() {
@@ -61,14 +73,17 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             public void onClick(View view) {
                 /// start activity to youtube player
                 startActivity(new Intent(MainActivity2.this, ViewVideo.class));
+                finish();
             }
         });
+
         // handle click activities image button
         binding.activitiesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /// start activity to healthy activities
                 startActivity(new Intent(MainActivity2.this, HealthyActivities.class));
+                finish();
             }
         });
 
@@ -77,9 +92,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity2.this,Schedule.class));
+                finish();
             }
         });
-
 
         // handle click journal image button
         binding.journalBtn.setOnClickListener(new View.OnClickListener(){
@@ -87,7 +102,17 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             public void onClick(View view){
                 // start journal activity
                 startActivity(new Intent(MainActivity2.this,JournalList.class));
+                finish();
+            }
+        });
 
+        // handle click weekly depression screening button
+        binding.testBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                // start journal activity
+                startActivity(new Intent(MainActivity2.this, PHQ9_Quiz.class));
+                finish();
             }
         });
 
