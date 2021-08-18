@@ -24,7 +24,7 @@
         <activity android:name=".Journal" />
         <activity
             android:name=".Schedule"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".JournalList" />
         <activity
             android:name=".PlayVideo"
