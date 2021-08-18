@@ -26,6 +26,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Button fx
+        new ClickShrinkEffect(binding.guest);
+        new ClickShrinkEffect(binding.googleSignInBtn);
+        new ClickShrinkEffect(binding.gotoAdmin);
+
         signInbtn = findViewById(R.id.goto_admin);
 
         //configure the Google Signin
@@ -56,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
         //init firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
+
         //checkUser();
+
 
         //Google SignInButton
         binding.googleSignInBtn.setOnClickListener(new View.OnClickListener(){
@@ -66,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                Log.d(TAG, "onClick: begin Google SignIn");
                Intent intent = googleSignInClient.getSignInIntent();
                startActivityForResult(intent,RC_SIGN_IN);// now we need to handle result of intent
+               finish();
            }
         });
 
@@ -78,13 +87,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.gotoAdmin.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View view) {
+               startActivity(new Intent(MainActivity.this,admin_login.class));
+               overridePendingTransition(R.anim.out_to_right, R.anim.in_from_left);
+               finish();
+           }
+        });
     }
 
-    public void onClick(View v){
-        startActivity(new Intent(MainActivity.this,admin_login.class));
-        overridePendingTransition(R.anim.out_to_right, R.anim.in_from_left);
-        finish();
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){

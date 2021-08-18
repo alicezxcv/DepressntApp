@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.app.databinding.ActivityScheduleBinding;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -45,6 +46,11 @@ public class Schedule extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityScheduleBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        //Button fx
+        new ClickShrinkEffect(binding.addNoteButton);
+        new ClickShrinkEffect(binding.deleteNoteBtn);
+        new ClickShrinkEffect(binding.deleteAllNoteBtn);
 
         getSupportActionBar().setTitle(simpleDate.format(binding.compactcalendarView.getFirstDayOfCurrentMonth()));
 

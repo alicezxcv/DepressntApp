@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_blue"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".PsychiatristDetail">
 
@@ -22,7 +22,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="16dp"
             android:background="@drawable/back_btn"
-            android:backgroundTint="@color/white" />
+            android:backgroundTint="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,84 +40,209 @@
                 android:fontFamily="@font/roboto_medium"
                 android:text="Edit psychiatrist"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
         </LinearLayout>
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="544dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="24dp"
-        android:layout_weight="1"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="16dp">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="0">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="64dp"
+            app:cardElevation="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="12dp"
-            android:layout_weight="0"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="64dp"
             android:background="@drawable/border_radius"
-            android:orientation="vertical">
+            android:backgroundTint="@color/white"
+            android:orientation="vertical"
+            android:elevation="10dp">
 
             <EditText
                 android:id="@+id/dTitleTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:background="@color/purple"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:background="@null"
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
+                android:hint="Psychiatrist's name"
                 android:padding="12dp"
                 android:text="Title"
-                android:hint="Psychiatrist's name"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/dDescriptionTv"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="0"
-                android:gravity="top"
-                android:lineSpacingExtra="2dp"
-                android:scrollbars="vertical"
-                android:text="This is description\nThis is another one"
-                android:hint="Clinic: ...\nLocation: ...\nPhone number: ...\nEmail: ..."
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/saveBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:background="@drawable/save_btn" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/deleteBtn"
-                android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingStart="12dp"
+                        android:text="Clinic:"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/edit_clinic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:hint="Clinic"
+                        android:paddingStart="8dp"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingStart="12dp"
+                        android:text="Location:"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/edit_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:hint="Location"
+                        android:paddingStart="8dp"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingStart="12dp"
+                        android:text="Phone:"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/edit_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:hint="Phone"
+                        android:paddingStart="8dp"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingStart="12dp"
+                        android:text="Mail:"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/edit_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:hint="Mail"
+                        android:paddingStart="8dp"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:text="Delete"/>
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/saveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_weight="0"
+                    android:background="@color/purple_blue"
+                    android:text="Update"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+                <Button
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_weight="0"
+                    android:background="@null"
+                    android:text="Delete"
+                    android:textAllCaps="false"
+                    android:textSize="16dp" />
+            </LinearLayout>
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
 
 
 </LinearLayout>

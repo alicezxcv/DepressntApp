@@ -1,32 +1,44 @@
 package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.app.databinding.ActivityPsychiatristBinding;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Psychiatrist extends AppCompatActivity {
+
+    ActivityPsychiatristBinding binding;
+
     RecyclerView mRecyclerView;
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mRef;
     ImageButton back,add;
     private boolean isClickable = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_psychiatrist);
+        binding = ActivityPsychiatristBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         back = (ImageButton) findViewById(R.id.back);
 
@@ -56,8 +68,14 @@ public class Psychiatrist extends AppCompatActivity {
             isClickable = false;
             add.setVisibility(View.GONE);
         }
-
-
+        else {
+            LinearLayout layout = binding.getRoot();
+            layout.setBackgroundColor(getResources().getColor(R.color.white));
+            back.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+            binding.title.setTextColor(getResources().getColor(R.color.black));
+            binding.recyclerView.setBackgroundColor(getResources().getColor(R.color.white));
+            binding.subtitle.setVisibility(View.GONE);
+        }
 
         //send query to firebase
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -65,10 +83,18 @@ public class Psychiatrist extends AppCompatActivity {
 
 
         back.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Psychiatrist.this, MainActivity2.class));
-                finish();
+                if (getIntent().getExtras().get("type").toString().equals("user")){
+                    startActivity(new Intent(Psychiatrist.this, MainActivity2.class));
+                    finish();
+                }
+                else
+                {
+                    startActivity(new Intent(Psychiatrist.this, ProfileActivity2.class));
+                    finish();
+                }
             }
         });
     }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_blue"
     android:orientation="vertical"
-    tools:context=".Psychiatrist">
+    tools:context=".DiagnosisResult">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="16dp"
-            android:background="@drawable/back_btn" />
+            android:background="@drawable/back_btn"
+            android:backgroundTint="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,18 +32,17 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Psychiatrists"
+                android:text="PHQ-9"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -51,7 +50,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Contact with the professionals\nIf anything happens, it's not our fault !"
+                android:text="based on your report"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -59,27 +58,41 @@
         </LinearLayout>
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="468dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="12dp"
-        android:layout_weight="1"
-        android:background="@color/purple_blue" />
-
-    <ImageButton
-        android:id="@+id/addBtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
         android:layout_weight="0"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="18dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/add_room"
-        />
+        android:orientation="vertical"
+        android:paddingTop="100dp">
 
+        <TextView
+            android:id="@+id/points_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_weight="0"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="Congratulation\nYou have depression!"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You should contact Johnny Sins ASAP"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:gravity="center" />
+    </LinearLayout>
 
 </LinearLayout>
