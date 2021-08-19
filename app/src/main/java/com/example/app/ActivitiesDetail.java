@@ -24,8 +24,7 @@ public class ActivitiesDetail extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ActivitiesDetail.this, HealthyActivities.class));
-                finish();
+                ActivitiesDetail.super.onBackPressed();
             }
         });
         mDetailTv = findViewById(R.id.dDescriptionTv);

@@ -18,8 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
+<<<<<<< Updated upstream
 
         <activity android:name=".ActivitiesDetail"></activity>
+=======
+        <activity android:name=".Insight"></activity>
+        <activity android:name=".MedicineView" />
+        <activity android:name=".MedicineDetail" />
+        <activity android:name=".Medicine" />
+        <activity android:name=".PsychiatristDetail" />
+        <activity android:name=".Psychiatrist" />
+        <activity android:name=".ActivitiesDetail" />
+>>>>>>> Stashed changes
         <activity android:name=".HealthyActivities" />
        
         <activity android:name=".Journal"></activity>
