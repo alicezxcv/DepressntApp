@@ -37,8 +37,8 @@ public class ActivitiesViewHolder extends RecyclerView.ViewHolder {
         mContentTv.setText(content);
         mTitleTv.setText(title);
         Picasso.with(ctx).load(image).into(mImageTv);
-
     }
+
 
     private ActivitiesViewHolder.ClickListener mClickListener;
     public interface ClickListener{

@@ -18,39 +18,65 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-<<<<<<< Updated upstream
 
-        <activity android:name=".ActivitiesDetail"></activity>
-=======
         <activity android:name=".Insight"></activity>
         <activity android:name=".MedicineView" />
         <activity android:name=".MedicineDetail" />
         <activity android:name=".Medicine" />
-        <activity android:name=".PsychiatristDetail" />
-        <activity android:name=".Psychiatrist" />
-        <activity android:name=".ActivitiesDetail" />
->>>>>>> Stashed changes
-        <activity android:name=".HealthyActivities" />
-       
-        <activity android:name=".Journal"></activity>
-        <activity android:name=".JournalList" />
-
-        <activity
-            android:name=".PlayVideo"
-            android:configChanges="orientation|screenSize" />
-        <activity android:name=".ViewVideo" />
-        <activity android:name=".admin_login" />
-        <activity android:name=".Chat" />
-        <activity android:name=".Room" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".ProfileActivity2" />
+        
+        <!--LOGIN-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--ADMIN-->
+        <activity android:name=".admin_login" />
+        <activity android:name=".ProfileActivity2" />
+
+        <!--PSYCHIATRIST-->
+        <activity android:name=".PsychiatristDetail"/>
+        <activity android:name=".Psychiatrist" />
+
+        <!--WEEKLY QUIZ-->
+        <activity android:name=".PHQ9_Quiz" />
+        <activity android:name=".DiagnosisResult" />
+
+        <!--ACTIVITIES-->
+
+        <activity android:name=".HealthyActivities" />
+        <activity android:name=".ActivitiesDetail" />
+
+        <!--JOURNAL-->
+        <activity android:name=".Journal" />
+        <activity android:name=".JournalList" />
+
+        <!--SCHEDULE-->
+        <activity
+            android:name=".Schedule"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <!--YOUTUBE VIDEOS-->
+        <activity android:name=".ViewVideo" />
+        <activity
+            android:name=".PlayVideo"
+            android:configChanges="orientation|screenSize" />
+
+        <!--CHAT ROOM-->
+        <activity android:name=".Room" />
+        <activity
+            android:name=".Chat"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <!--MAIN SCREEN-->
+        <activity android:name=".MainActivity2" />
+
+        <!--FONTS-->
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.app.databinding.ActivityJournalListBinding;
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -37,6 +38,9 @@ public class JournalList extends AppCompatActivity {
         binding = ActivityJournalListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.btnAddJournal.bringToFront();
+
+        //Button fx
+        new ClickShrinkEffect(binding.btnAddJournal);
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_of_journals);
         binding.listView.setAdapter(arrayAdapter);
@@ -138,7 +142,7 @@ public class JournalList extends AppCompatActivity {
             }
 
         } catch (FileNotFoundException e) {
-            Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
         }

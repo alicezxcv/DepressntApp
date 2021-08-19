@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_blue"
+    android:orientation="vertical"
+    tools:context=".Schedule">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/back_btn"
+            android:backgroundTint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="38dp"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Schedule"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Set your important meeting\nor medicine reminder"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="0">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/border_radius" />
+
+            <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                android:id="@+id/compactcalendar_view"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:compactCalendarBackgroundColor="#ffffff"
+                app:compactCalendarCurrentDayBackgroundColor="@color/purple"
+                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/sky_blue"
+                app:compactCalendarMultiEventIndicatorColor="#fff"
+                app:compactCalendarTargetHeight="250dp"
+                app:compactCalendarTextColor="@color/black"
+                app:compactCalendarTextSize="12sp" />
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/noteEditText"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="26dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_radius"
+            android:gravity="top"
+            android:hint="Write note"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/addNoteButton"
+            app:layout_constraintTop_toBottomOf="@id/compactcalendar_view" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="0"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="18dp">
+
+            <Button
+                android:id="@+id/addNoteButton"
+                android:layout_width="200dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:background="@drawable/border_radius"
+                android:backgroundTint="@color/purple"
+                android:text="Save"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <Button
+                android:id="@+id/deleteNoteBtn"
+                android:layout_width="200dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_radius"
+                android:backgroundTint="@color/purple"
+                android:text="Delete"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/addNoteButton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <Button
+                android:id="@+id/deleteAllNoteBtn"
+                android:layout_width="164dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:backgroundTint="@color/sky_blue"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Delete All"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/addNoteButton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="24dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

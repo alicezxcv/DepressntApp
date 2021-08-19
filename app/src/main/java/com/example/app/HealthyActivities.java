@@ -48,6 +48,7 @@ public class HealthyActivities extends AppCompatActivity {
         //send query to firebase
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference("Activites"); //*activities
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +100,7 @@ public class HealthyActivities extends AppCompatActivity {
 //                        intent.putExtra("image", stream.toByteArray());
                         intent.putExtra("title", mTitle);
                         intent.putExtra("detail", mDetail);
+
                         startActivity(intent);
 
                     }

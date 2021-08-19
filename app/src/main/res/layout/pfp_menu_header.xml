@@ -5,31 +5,4 @@
     android:background="@color/purple_blue"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="72dp">
-
-        <ImageView
-            android:id="@+id/pfp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/user_pfp"
-            android:layout_centerHorizontal="true"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pfp"
-            android:layout_centerHorizontal="true"
-            android:text="Username"
-            android:textSize="24sp"
-            android:layout_marginTop="12dp"/>
-
-    </RelativeLayout>
-
-
-
 </LinearLayout>

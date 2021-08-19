@@ -4,38 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewVideo"
+    android:background="@color/purple_blue"
     android:orientation="vertical"
-    android:background="@color/purple_blue">
-
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/back_btn"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="16dp"
-        />
+    tools:context=".ViewVideo">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="24dp"
+        android:layout_weight="0"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/back_btn"
+            android:backgroundTint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="38dp"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Videos"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="These videos are not substitute for professional advice, but general guidance."
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0">
+
         <ListView
             android:id="@+id/listviewVideo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@null"
-            android:dividerHeight="24dp"
-            android:background="@drawable/border_radius"
-            android:backgroundTint="@color/purple_blue"
-            android:fadingEdge="vertical"
-            android:scrollbars="none"
-            android:paddingTop="12dp"
             android:layout_marginStart="36dp"
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="12dp"
-            />
+            android:background="@drawable/border_radius"
+            android:backgroundTint="@color/purple_blue"
+            android:divider="@null"
+            android:dividerHeight="24dp"
+            android:fadingEdge="vertical"
+            android:scrollbars="none" />
     </LinearLayout>
 
 </LinearLayout>

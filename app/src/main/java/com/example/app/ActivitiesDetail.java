@@ -33,8 +33,8 @@ public class ActivitiesDetail extends AppCompatActivity {
 
 //        byte[] bytes = getIntent().getByteArrayExtra("image");
 //        Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        String title =  getIntent().getStringExtra("title");
-        String detail = getIntent().getStringExtra("detail");
+        String title =  (String) getIntent().getStringExtra("title");
+        String detail = (String) getIntent().getStringExtra("detail");
 
 //
         mTitleTv.setText(title);

@@ -2,15 +2,13 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.app.databinding.ActivityJournalBinding;
-
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,10 +28,15 @@ public class Journal extends AppCompatActivity {
         setContentView(binding.getRoot());
         loadJournalFromFile(getIntent().getExtras().get("entry_title").toString());
 
+        //Button fx
+        new ClickShrinkEffect(binding.saveBtn);
+
         journal_name = getIntent().getExtras().get("entry_title").toString();
         journal_header = (TextView) findViewById(R.id.header);
 
         journal_header.setText(journal_name);
+
+        binding.journalText.setSelection(binding.journalText.getText().length());
 
         binding.saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,11 +59,11 @@ public class Journal extends AppCompatActivity {
         File file = new File(path,entry_title+".txt");
         if (file.exists()) {
             try {
-                FileWriter writer = new FileWriter(file,false);
+                FileWriter writer = new FileWriter(file,true);
                 writer.append(pgraph);
                 writer.flush();
                 writer.close();
-                Toast.makeText(Journal.this, "Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Journal.this, "Saved successfully", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
