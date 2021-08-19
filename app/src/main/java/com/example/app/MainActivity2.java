@@ -77,15 +77,34 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             }
         });
 
+        // handle click insight button
+        binding.insightBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /// start activity to insight
+                startActivity(new Intent(MainActivity2.this, Insight.class));
+            }
+        });
+
+
         // handle click activities image button
         binding.activitiesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /// start activity to healthy activities
                 startActivity(new Intent(MainActivity2.this, HealthyActivities.class));
-                finish();
+
             }
         });
+        // handle click medicine button
+        binding.medBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /// start activity to medicine
+                startActivity(new Intent(MainActivity2.this, Medicine.class));
+            }
+        });
+
 
         // handle click schedule image button
         binding.scheduleBtn.setOnClickListener(new View.OnClickListener() {

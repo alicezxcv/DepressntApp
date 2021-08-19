@@ -3,45 +3,34 @@ package com.example.app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ActivitiesDetail extends AppCompatActivity {
-    TextView mTitleTv, mDetailTv;
-    ImageView mImageIv;
+public class MedicineView extends AppCompatActivity {
     ImageButton back;
+    TextView mTitleTv, mDetailTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activities_detail);
+        setContentView(R.layout.activity_medicine_view);
         back = (ImageButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivitiesDetail.super.onBackPressed();
+                MedicineView.super.onBackPressed();
             }
         });
-        mDetailTv = findViewById(R.id.dDescriptionTv);
-        mImageIv = findViewById(R.id.dImageView);
-        mTitleTv = findViewById(R.id.dTitleTv);
-
-//        byte[] bytes = getIntent().getByteArrayExtra("image");
-//        Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         String title =  (String) getIntent().getStringExtra("title");
-        String detail = (String) getIntent().getStringExtra("detail");
+        String content =  (String) getIntent().getStringExtra("content");
 
-//
+        mDetailTv = findViewById(R.id.medDescription);
+        mTitleTv = findViewById(R.id.medTitle);
+
         mTitleTv.setText(title);
-        mDetailTv.setText(detail);
+        mDetailTv.setText(content);
         mDetailTv.setMovementMethod(new ScrollingMovementMethod());
-//        mImageIv.setImageBitmap(bmp);
-
-
     }
 }

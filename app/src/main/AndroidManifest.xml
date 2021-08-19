@@ -19,6 +19,11 @@
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
 
+        <activity android:name=".Insight"></activity>
+        <activity android:name=".MedicineView" />
+        <activity android:name=".MedicineDetail" />
+        <activity android:name=".Medicine" />
+        
         <!--LOGIN-->
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -40,6 +45,7 @@
         <activity android:name=".DiagnosisResult" />
 
         <!--ACTIVITIES-->
+
         <activity android:name=".HealthyActivities" />
         <activity android:name=".ActivitiesDetail" />
 

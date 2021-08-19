@@ -55,6 +55,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database:20.0.1'
     implementation 'com.firebaseui:firebase-ui-database:0.4.0'
+    
 
     implementation 'com.github.realpacific:click-shrink-effect:2.0'
     implementation files('libs\\YouTubeAndroidPlayerApi.jar')
