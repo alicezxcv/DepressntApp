@@ -6,6 +6,8 @@ import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -87,10 +89,30 @@ public class Schedule extends AppCompatActivity {
         binding.deleteAllNoteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.compactcalendarView.removeAllEvents();
-                // empty file
-                deleteAll();
-                binding.noteEditText.setText("");
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(Schedule.this);
+                builder1.setMessage("This action will delete all the event\nDo you want to proceed?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                binding.compactcalendarView.removeAllEvents();
+                                // empty file
+                                deleteAll();
+                                binding.noteEditText.setText("");
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
             }
         });
 

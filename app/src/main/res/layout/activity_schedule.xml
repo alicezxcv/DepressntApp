@@ -162,7 +162,7 @@
                 android:backgroundTint="@color/sky_blue"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Delete All"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/addNoteButton"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
