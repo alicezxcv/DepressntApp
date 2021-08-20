@@ -64,35 +64,66 @@
         android:layout_marginTop="64dp"
         android:layout_weight="0"
         android:orientation="vertical"
-        android:paddingTop="100dp">
+        android:paddingTop="24dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/points_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:layout_gravity="center"/>
+            <ProgressBar
+                android:id="@+id/points_circular"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/circular_progressbar_quiz"
+                tools:progress="100"
+                />
+        </FrameLayout>
 
         <TextView
-            android:id="@+id/points_display"
+            android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="5"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_weight="0"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:text="Congratulation\nYou have depression!"
+            android:text="@string/diagnosis_result_none"
             android:textColor="@color/white"
             android:textSize="24sp" />
 
         <TextView
+            android:id="@+id/result_advice1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="You should contact Johnny Sins ASAP"
+            android:text="@string/diagnosis_result_moderate_conclusion"
             android:textColor="@color/white"
             android:textSize="18dp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/result_advice2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/diagnosis_result_mid_high_priority_advice"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
     </LinearLayout>
 
 </LinearLayout>
