@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class PsychiatristDetail extends AppCompatActivity {
-    private EditText mTitleTv, mDetailTv, mClinic, mLocation, mPhone, mMail;
+    private EditText mTitleTv, mClinic, mLocation, mPhone, mMail;
     private ImageButton back;
     private DatabaseReference ref;
     private Button save, del;
@@ -36,15 +36,22 @@ public class PsychiatristDetail extends AppCompatActivity {
         mMail = findViewById(R.id.edit_email);
 
         String title =  (String) getIntent().getStringExtra("title");
-        String detail = ((String) getIntent().getStringExtra("detail"));
+        String detail = (String) getIntent().getStringExtra("detail");
 
-        String detailSplit[] = detail.split("\\n");
+        if (!detail.equals("")) {
+            String detailSplit[] = detail.split("\\n");
 
-        mClinic.setText(detailSplit[0].replaceAll("\\bClinic: \\b", ""));
-        mLocation.setText(detailSplit[1].replaceAll("\\bLocation: \\b", ""));
-        mPhone.setText(detailSplit[2].replaceAll("\\bPhone\\s*number\\b.\\s*", ""));
-        mMail.setText(detailSplit[3].replaceAll("\\bEmail: \\b", ""));
-
+            mClinic.setText(detailSplit[0].replaceAll("\\bClinic: \\b", ""));
+            mLocation.setText(detailSplit[1].replaceAll("\\bLocation: \\b", ""));
+            mPhone.setText(detailSplit[2].replaceAll("\\bPhone\\s*number\\b.\\s*", ""));
+            mMail.setText(detailSplit[3].replaceAll("\\bEmail: \\b", ""));
+        }
+        else{
+            mClinic.setText("");
+            mLocation.setText("");
+            mPhone.setText("");
+            mMail.setText("");
+        }
         mTitleTv.setText(title);
 
         // handle save button
