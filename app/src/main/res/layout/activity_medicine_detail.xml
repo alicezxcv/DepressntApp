@@ -67,9 +67,7 @@
         android:layout_below="@+id/linearL"
         android:layout_margin="15dp"
         android:columnCount="2"
-        android:rowCount="5"
-
-        >
+        android:rowCount="5">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/dWarningTv"

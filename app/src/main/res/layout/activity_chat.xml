@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Chat"
+                android:text="Room_name"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp" />

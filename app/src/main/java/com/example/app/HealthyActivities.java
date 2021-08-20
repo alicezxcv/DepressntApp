@@ -8,12 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.app.databinding.ActivityHealthyActivitiesBinding;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 
 import com.google.firebase.database.DatabaseReference;
@@ -28,19 +31,31 @@ public class HealthyActivities extends AppCompatActivity {
     ImageButton back,add;
     private Boolean isUser = false;
     private FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter;
+    private ActivityHealthyActivitiesBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_healthy_activities);
+        binding = ActivityHealthyActivitiesBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
+        back = (ImageButton) findViewById(R.id.back);
         add = findViewById(R.id.addBtn);
         add.bringToFront();
         if (getIntent().getExtras().get("type").toString().equals("user")){
             isUser = true;
             add.setVisibility(View.GONE);
         }
+        else
+        {
+            LinearLayout layout = binding.getRoot();
+            layout.setBackgroundColor(getResources().getColor(R.color.white));
+            back.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+            binding.title.setTextColor(getResources().getColor(R.color.black));
+            binding.recyclerView.setBackgroundColor(getResources().getColor(R.color.white));
+            binding.subtitle.setVisibility(View.GONE);
+        }
 
-        back = (ImageButton) findViewById(R.id.back);
+
 //
         //RecyclerView
         mRecyclerView = findViewById(R.id.recyclerView);

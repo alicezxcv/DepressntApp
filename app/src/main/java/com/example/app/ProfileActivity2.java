@@ -33,7 +33,8 @@ public class ProfileActivity2 extends AppCompatActivity {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                firebaseAuth.signOut();
+                checkUser();
             }
         });
 
