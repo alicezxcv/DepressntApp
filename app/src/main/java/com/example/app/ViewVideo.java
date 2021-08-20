@@ -58,14 +58,15 @@ public class ViewVideo extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ViewVideo.this, MainActivity2.class));
+               // startActivity(new Intent(ViewVideo.this, MainActivity2.class));
+                finish();
             }
         });
     }
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(ViewVideo.this, MainActivity2.class));
+       // startActivity(new Intent(ViewVideo.this, MainActivity2.class));
         finish();
     }
 

@@ -173,7 +173,7 @@ public class Room extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
-                startActivity(new Intent(Room.this, MainActivity.class));
+                //startActivity(new Intent(Room.this, MainActivity.class));
                 finish();
             }
         });
@@ -182,7 +182,7 @@ public class Room extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(Room.this, MainActivity.class));
+        //startActivity(new Intent(Room.this, MainActivity.class));
         finish();
     }
 }

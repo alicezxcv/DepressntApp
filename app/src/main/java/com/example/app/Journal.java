@@ -48,7 +48,7 @@ public class Journal extends AppCompatActivity {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Journal.this, JournalList.class));
+                //startActivity(new Intent(Journal.this, JournalList.class));
                 finish();
             }
         });

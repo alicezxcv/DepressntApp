@@ -44,7 +44,7 @@ public class Medicine extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Medicine.this, MainActivity2.class));
+                //startActivity(new Intent(Medicine.this, MainActivity2.class));
                 finish();
             }
         });

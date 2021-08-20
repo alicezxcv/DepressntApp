@@ -152,5 +152,6 @@ public class Chat extends AppCompatActivity {
         Intent intent= new Intent(getApplicationContext(),Room.class);
         intent.putExtra("user_name",user_name);
         startActivity(intent);
+        finish();
     }
 }

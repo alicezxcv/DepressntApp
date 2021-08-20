@@ -42,7 +42,7 @@ public class Insight extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Insight.this, MainActivity2.class));
+               // startActivity(new Intent(Insight.this, MainActivity2.class));
                 finish();
             }
         });

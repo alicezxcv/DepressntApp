@@ -29,7 +29,7 @@ public class MedicineDetail extends AppCompatActivity implements View.OnClickLis
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MedicineDetail.this, Medicine.class));
+                //startActivity(new Intent(MedicineDetail.this, Medicine.class));
                 finish();
             }
         });

@@ -135,7 +135,7 @@ public class PHQ9_Quiz extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(PHQ9_Quiz.this, MainActivity.class));
+       // startActivity(new Intent(PHQ9_Quiz.this, MainActivity.class));
         finish();
     }
 }

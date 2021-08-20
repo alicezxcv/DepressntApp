@@ -68,7 +68,7 @@ public class HealthyActivities extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HealthyActivities.this, MainActivity2.class));
+               // startActivity(new Intent(HealthyActivities.this, MainActivity2.class));
                 finish();
             }
         });
