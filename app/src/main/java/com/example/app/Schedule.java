@@ -241,7 +241,7 @@ public class Schedule extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(Schedule.this, MainActivity2.class));
+        // startActivity(new Intent(Schedule.this, MainActivity2.class));
         finish();
     }
 }

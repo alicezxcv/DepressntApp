@@ -86,15 +86,15 @@ public class Psychiatrist extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if (getIntent().getExtras().get("type").toString().equals("user")){
-                    startActivity(new Intent(Psychiatrist.this, MainActivity2.class));
+                //if (getIntent().getExtras().get("type").toString().equals("user")){
+                    //startActivity(new Intent(Psychiatrist.this, MainActivity2.class));
+                 //   finish();
+               // }
+               // else
+               // {
+                    //startActivity(new Intent(Psychiatrist.this, ProfileActivity2.class));
                     finish();
-                }
-                else
-                {
-                    startActivity(new Intent(Psychiatrist.this, ProfileActivity2.class));
-                    finish();
-                }
+               // }
             }
         });
     }

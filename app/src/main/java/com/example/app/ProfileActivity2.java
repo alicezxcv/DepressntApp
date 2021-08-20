@@ -30,6 +30,13 @@ public class ProfileActivity2 extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         checkUser();
 
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         //handle click, logout
         binding.logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,7 +118,7 @@ public class ProfileActivity2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(ProfileActivity2.this, admin_login.class));
+       // startActivity(new Intent(ProfileActivity2.this, admin_login.class));
         finish();
     }
 }

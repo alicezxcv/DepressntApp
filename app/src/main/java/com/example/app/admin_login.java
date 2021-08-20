@@ -93,7 +93,8 @@ public class admin_login extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(admin_login.this, MainActivity.class));
+        startActivity(new Intent(admin_login.this,MainActivity.class));
+        overridePendingTransition(R.anim.out_to_left, R.anim.in_from_right);
         finish();
     }
 }

@@ -90,7 +90,7 @@ public class DiagnosisResult extends AppCompatActivity {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DiagnosisResult.this, MainActivity2.class));
+                //startActivity(new Intent(DiagnosisResult.this, MainActivity2.class));
                 finish();
             }
         });
@@ -98,7 +98,7 @@ public class DiagnosisResult extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(DiagnosisResult.this, MainActivity2.class));
+        //startActivity(new Intent(DiagnosisResult.this, MainActivity2.class));
         finish();
     }
 }
