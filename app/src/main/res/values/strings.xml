@@ -32,7 +32,7 @@
     <!--Diagnosis advice-->
     <string name="diagnosis_result_low_priority_advice">Still if you feel something isn’t quite right we recommend you schedule an appointment with a doctor. If you need help finding a mental health professional we suggest to reach out in our Psychiatrist section</string>
     <string name="diagnosis_result_mid_priority_advice">Consider watchful waiting, and testing again normally within two weeks. We additionally suggest it would be prudent to start a conversation with a doctor. If you need help finding a mental health professional we suggest to reach out in our Psychiatrist section</string>
-    <string name="diagnosis_result_mid_high_priority_advice">It doesn’t necessarily mean you have depression but is important that you schedule an appointment with your doctor or a mental health worker. If you need help finding a mental health professional we suggest to reach out in our Psychiatrist section</string>
+    <string name="diagnosis_result_above_mid_advice">It doesn’t necessarily mean you have depression but is important that you schedule an appointment with your doctor or a mental health worker. If you need help finding a mental health professional we suggest to reach out in our Psychiatrist section</string>
     <string name="diagnosis_result_high_priority_advice">It is important that you schedule an appointment with your doctor or a mental health worker. If you need help finding a mental health professional we suggest to reach out in our Psychiatrist section</string>
 
 </resources>

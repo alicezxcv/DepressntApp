@@ -64,21 +64,21 @@
         android:layout_marginTop="64dp"
         android:layout_weight="0"
         android:orientation="vertical"
-        android:paddingTop="24dp">
+        android:paddingTop="12dp">
 
         <FrameLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
-            <TextView
-                android:id="@+id/points_display"
-                android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:layout_gravity="center"/>
+                android:background="@drawable/save_btn"
+                android:layout_gravity="center"
+                android:scaleX="2"
+                android:scaleY="2"/>
             <ProgressBar
                 android:id="@+id/points_circular"
                 android:layout_width="200dp"
@@ -86,44 +86,55 @@
                 android:indeterminateOnly="false"
                 android:progressDrawable="@drawable/circular_progressbar_quiz"
                 tools:progress="100"
+                android:layout_gravity="center"
                 />
         </FrameLayout>
 
-        <TextView
-            android:id="@+id/result"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center"
-            android:text="@string/diagnosis_result_none"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:orientation="vertical"
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/result_advice1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/diagnosis_result_moderate_conclusion"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"/>
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/diagnosis_result_none"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/result_advice2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/diagnosis_result_mid_high_priority_advice"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:gravity="center"
-            android:layout_marginTop="8dp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"/>
+            <TextView
+                android:id="@+id/conclude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnosis_result_moderate_conclusion"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/advice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnosis_result_above_mid_advice"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
