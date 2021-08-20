@@ -1,22 +1,17 @@
 package com.example.app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -30,11 +25,20 @@ public class HealthyActivities extends AppCompatActivity {
     RecyclerView mRecyclerView;
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mRef;
-    ImageButton back;
+    ImageButton back,add;
+    private Boolean isUser = false;
+    private FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_healthy_activities);
+
+        add = findViewById(R.id.addBtn);
+        add.bringToFront();
+        if (getIntent().getExtras().get("type").toString().equals("user")){
+            isUser = true;
+            add.setVisibility(View.GONE);
+        }
 
         back = (ImageButton) findViewById(R.id.back);
 //
@@ -48,6 +52,18 @@ public class HealthyActivities extends AppCompatActivity {
         //send query to firebase
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference("Activites"); //*activities
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HealthyActivities.this, HealthyActivitiesEdit.class);
+                intent.putExtra("title", "");
+                intent.putExtra("detail", "");
+                intent.putExtra("content","");
+                intent.putExtra("index",String.valueOf(firebaseRecyclerAdapter.getItemCount()));
+                startActivity(intent);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +81,7 @@ public class HealthyActivities extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 //        FirebaseRecyclerOptions<Model> options = new FirebaseRecyclerOptions.Builder<Model>()
-        FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter =
+        firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Model, ActivitiesViewHolder>(
                         Model.class,
                         R.layout.row_activities,
@@ -83,26 +99,35 @@ public class HealthyActivities extends AppCompatActivity {
                 viewHolder.setOnClickListener(new ActivitiesViewHolder.ClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
+
                         TextView mTitleTv = view.findViewById(R.id.rTitleTv);
                         TextView mDetailTv = view.findViewById(R.id.rContentTv);
-                        ImageView mImageTv = view.findViewById(R.id.rImageView);
-
+                        //ImageView mImageTv = view.findViewById(R.id.rImageView);
+                        TextView mContent = view.findViewById(R.id.rDescriptionTv);
                         String mTitle = mTitleTv.getText().toString();
                         String mDetail = mDetailTv.getText().toString();
 //                        Drawable mDrawable = mImageTv.getDrawable();
 //                        Bitmap mBitmap = ((BitmapDrawable)mDrawable).getBitmap();
-
-
-                        Intent intent = new Intent(HealthyActivities.this, ActivitiesDetail.class);
+                        if (isUser) {
+                            Intent intent = new Intent(HealthyActivities.this, ActivitiesDetail.class);
 //                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
 //                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
 //                        intent.putExtra("image", stream.toByteArray());
-                        intent.putExtra("title", mTitle);
-                        intent.putExtra("detail", mDetail);
-
-                        startActivity(intent);
-
+                            intent.putExtra("title", mTitle);
+                            intent.putExtra("detail", mDetail);
+                            startActivity(intent);
+                        }
+                        else{
+                            Intent intent = new Intent(HealthyActivities.this, HealthyActivitiesEdit.class);
+//                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//                        intent.putExtra("image", stream.toByteArray());
+                            intent.putExtra("title", mTitle);
+                            intent.putExtra("detail", mDetail);
+                            intent.putExtra("content",mContent.getText().toString());
+                            intent.putExtra("index",String.valueOf(position));
+                            startActivity(intent);
+                        }
                     }
                 });
                 return viewHolder;

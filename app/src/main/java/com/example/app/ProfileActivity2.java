@@ -80,6 +80,16 @@ public class ProfileActivity2 extends AppCompatActivity {
             }
         });
 
+        // handle click edit healthy activities button
+        binding.editHealthyActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity2.this, HealthyActivities.class);
+                intent.putExtra("type","admin");
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void checkUser() {

@@ -92,8 +92,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view) {
                 /// start activity to healthy activities
-                startActivity(new Intent(MainActivity2.this, HealthyActivities.class));
-
+                Intent intent = new Intent(MainActivity2.this, HealthyActivities.class);
+                intent.putExtra("type","user");
+                startActivity(intent);
             }
         });
         // handle click medicine button

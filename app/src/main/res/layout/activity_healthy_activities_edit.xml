@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_blue"
     android:orientation="vertical"
-    tools:context=".ActivitiesDetail">
+    android:background="@color/purple_blue"
+    tools:context=".HealthyActivitiesEdit">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,30 +32,17 @@
             android:layout_weight="0"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/dTitleTv"
+            <EditText
+                android:id="@+id/dTitleEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Post_name"
+                android:hint="Edit title"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="These post are not substitute for professional advice, but general guidance."
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>
 
@@ -79,33 +66,69 @@
             android:background="@drawable/border_radius"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/dImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:id="@+id/dDescriptionTv"
+            <EditText
+                android:id="@+id/ContentEt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="0"
+                android:hint="This is content\nThis is another one"
                 android:lineSpacingExtra="2dp"
                 android:scrollbars="vertical"
-                android:text="This is description\nThis is another one"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/dDescriptionEt"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="0"
+                android:lineSpacingExtra="2dp"
+                android:scrollbars="vertical"
+                android:hint="This is description\nThis is another one"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/updateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_weight="0"
+                android:background="@color/purple_blue"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/deleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_weight="0"
+                android:background="@null"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:textSize="16dp" />
+
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
-
 
 </LinearLayout>

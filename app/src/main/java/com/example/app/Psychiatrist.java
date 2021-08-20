@@ -33,7 +33,7 @@ public class Psychiatrist extends AppCompatActivity {
     DatabaseReference mRef;
     ImageButton back,add;
     private boolean isClickable = true;
-
+    private FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +51,7 @@ public class Psychiatrist extends AppCompatActivity {
                 Intent intent = new Intent(Psychiatrist.this, PsychiatristDetail.class);
                 intent.putExtra("title", "");
                 intent.putExtra("detail", "");
-                intent.putExtra("index",String.valueOf(mRecyclerView.getChildCount()));
+                intent.putExtra("index",String.valueOf(firebaseRecyclerAdapter.getItemCount()));
                 startActivity(intent);
             }
         });
@@ -105,7 +105,7 @@ public class Psychiatrist extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter =
+        firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Model, ActivitiesViewHolder>(
                         Model.class,
                         R.layout.row_psychiatrist,
