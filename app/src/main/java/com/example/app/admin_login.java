@@ -69,7 +69,6 @@ public class admin_login extends AppCompatActivity {
                             public void onSuccess(AuthResult authResult) {
                                 Toast.makeText(admin_login.this, "Login Successfully!!!", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(admin_login.this ,ProfileActivity2.class));
-                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

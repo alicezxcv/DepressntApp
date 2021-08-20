@@ -45,9 +45,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
 
         //Button fx
         new ClickShrinkEffect(binding.activitiesBtn);
-        //new ClickShrinkEffect(binding.);  Med info
+        new ClickShrinkEffect(binding.medBtn);
         new ClickShrinkEffect(binding.videoBtn);
-        //new ClickShrinkEffect(binding.);  Insight
+        new ClickShrinkEffect(binding.insightBtn);
         new ClickShrinkEffect(binding.psychiatristBtn);
         new ClickShrinkEffect(binding.scheduleBtn);
         new ClickShrinkEffect(binding.journalBtn);
@@ -86,7 +86,6 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             }
         });
 
-
         // handle click activities image button
         binding.activitiesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +96,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
                 startActivity(intent);
             }
         });
+
         // handle click medicine button
         binding.medBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +105,6 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
                 startActivity(new Intent(MainActivity2.this, Medicine.class));
             }
         });
-
 
         // handle click schedule image button
         binding.scheduleBtn.setOnClickListener(new View.OnClickListener() {
@@ -170,7 +169,6 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         {
             case R.id.nav_chat:
                 startActivity(new Intent(MainActivity2.this, Room.class));
-                finish();
                 break;
 
             case R.id.nav_help:
