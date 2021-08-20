@@ -8,14 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class HealthyActivitiesEdit extends AppCompatActivity {
+public class InsightEdit extends AppCompatActivity {
     EditText mTitleEt, mDetailEt, mContentEt;
     ImageButton back;
     Button updateBtn,deleteBtn;
@@ -23,14 +21,14 @@ public class HealthyActivitiesEdit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_healthy_activities_edit);
+        setContentView(R.layout.activity_insight_edit);
 
         // handle back button pressed
         back = (ImageButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HealthyActivitiesEdit.super.onBackPressed();
+                InsightEdit.super.onBackPressed();
             }
         });
 
@@ -48,9 +46,9 @@ public class HealthyActivitiesEdit extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ref = FirebaseDatabase.getInstance().getReference("Activites");
+                ref = FirebaseDatabase.getInstance().getReference("Insight");
                 ref.child(getIntent().getExtras().get("index").toString()).removeValue();
-                Toast.makeText(HealthyActivitiesEdit.this, "Deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InsightEdit.this, "Deleted", Toast.LENGTH_SHORT).show();
                 mTitleEt.setText("");
                 mDetailEt.setText("");
                 mContentEt.setText("");
@@ -76,11 +74,11 @@ public class HealthyActivitiesEdit extends AppCompatActivity {
     }
 
     public void update(){
-        ref = FirebaseDatabase.getInstance().getReference("Activites");
+        ref = FirebaseDatabase.getInstance().getReference("Insight");
         ref.child(getIntent().getExtras().get("index").toString()).child("title").setValue(mTitleEt.getText().toString());
         ref.child(getIntent().getExtras().get("index").toString()).child("content").setValue(mContentEt.getText().toString());
         ref.child(getIntent().getExtras().get("index").toString()).child("description").setValue(mDetailEt.getText().toString());
-        Toast.makeText(HealthyActivitiesEdit.this, "Updated", Toast.LENGTH_SHORT).show();
+        Toast.makeText(InsightEdit.this, "Updated", Toast.LENGTH_SHORT).show();
     }
 
 }

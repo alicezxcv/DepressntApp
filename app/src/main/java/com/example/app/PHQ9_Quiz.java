@@ -97,7 +97,7 @@ public class PHQ9_Quiz extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 // perform delete entry
-                                startActivity(new Intent(PHQ9_Quiz.this, MainActivity2.class));
+                                //startActivity(new Intent(PHQ9_Quiz.this, MainActivity2.class));
                                 finish();
                             }
                         });

@@ -18,8 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
+
+        <activity android:name=".InsightEdit"></activity>
         <activity android:name=".HealthyActivitiesEdit"
-            android:windowSoftInputMode="adjustPan"> ></activity>
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
         <activity android:name=".Insight" />
         <activity android:name=".MedicineView" />
         <activity android:name=".MedicineDetail" />
