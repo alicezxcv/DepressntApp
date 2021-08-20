@@ -101,11 +101,12 @@ public class HealthyActivities extends AppCompatActivity {
                     public void onItemClick(View view, int position) {
 
                         TextView mTitleTv = view.findViewById(R.id.rTitleTv);
-                        TextView mDetailTv = view.findViewById(R.id.rContentTv);
+                        TextView mContent = view.findViewById(R.id.rContentTv);
                         //ImageView mImageTv = view.findViewById(R.id.rImageView);
-                        TextView mContent = view.findViewById(R.id.rDescriptionTv);
-                        String mTitle = mTitleTv.getText().toString();
-                        String mDetail = mDetailTv.getText().toString();
+                        TextView mDescriptionTv = view.findViewById(R.id.rDescriptionTv);
+
+                        //String mTitle = mTitleTv.getText().toString();
+                        //String mDetail = mContent.getText().toString();
 //                        Drawable mDrawable = mImageTv.getDrawable();
 //                        Bitmap mBitmap = ((BitmapDrawable)mDrawable).getBitmap();
                         if (isUser) {
@@ -113,8 +114,8 @@ public class HealthyActivities extends AppCompatActivity {
 //                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
 //                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 //                        intent.putExtra("image", stream.toByteArray());
-                            intent.putExtra("title", mTitle);
-                            intent.putExtra("detail", mDetail);
+                            intent.putExtra("title", mTitleTv.getText().toString());
+                            intent.putExtra("detail", mContent.getText().toString());
                             startActivity(intent);
                         }
                         else{
@@ -122,8 +123,8 @@ public class HealthyActivities extends AppCompatActivity {
 //                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
 //                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 //                        intent.putExtra("image", stream.toByteArray());
-                            intent.putExtra("title", mTitle);
-                            intent.putExtra("detail", mDetail);
+                            intent.putExtra("title", mTitleTv.getText().toString());
+                            intent.putExtra("description", mDescriptionTv.getText().toString());
                             intent.putExtra("content",mContent.getText().toString());
                             intent.putExtra("index",String.valueOf(position));
                             startActivity(intent);

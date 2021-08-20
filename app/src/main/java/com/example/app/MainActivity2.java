@@ -82,7 +82,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view) {
                 /// start activity to insight
-                startActivity(new Intent(MainActivity2.this, Insight.class));
+                Intent intent = new Intent(MainActivity2.this, Insight.class);
+                intent.putExtra("type","user");
+                startActivity(intent);
             }
         });
 

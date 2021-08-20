@@ -20,11 +20,16 @@ public class Insight extends AppCompatActivity {
     RecyclerView mRecyclerView;
     FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mRef;
-    ImageButton back;
+    ImageButton back,add;
+    private Boolean isUser = false;
+    private FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insight);
+
+        add = findViewById(R.id.addBtn);
+        add.bringToFront();
 
         back = (ImageButton) findViewById(R.id.back);
 //
@@ -39,6 +44,24 @@ public class Insight extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mRef = mFirebaseDatabase.getReference("Insight");
 
+        if (getIntent().getExtras().get("type").toString().equals("user")){
+            isUser = true;
+            add.setVisibility(View.GONE);
+        }
+
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Insight.this, InsightEdit.class);
+                intent.putExtra("title", "");
+                intent.putExtra("detail", "");
+                intent.putExtra("content","");
+                intent.putExtra("index",String.valueOf(firebaseRecyclerAdapter.getItemCount()));
+                startActivity(intent);
+            }
+        });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +75,7 @@ public class Insight extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 //        FirebaseRecyclerOptions<Model> options = new FirebaseRecyclerOptions.Builder<Model>()
-        FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter =
+        firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Model, ActivitiesViewHolder>(
                         Model.class,
                         R.layout.row_activities,
@@ -71,25 +94,34 @@ public class Insight extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 TextView mTitleTv = view.findViewById(R.id.rTitleTv);
-                                TextView mDetailTv = view.findViewById(R.id.rContentTv);
-                                ImageView mImageTv = view.findViewById(R.id.rImageView);
+                                TextView mContent = view.findViewById(R.id.rContentTv);
+                                //ImageView mImageTv = view.findViewById(R.id.rImageView);
+                                TextView mDescriptionTv = view.findViewById(R.id.rDescriptionTv);
 
-                                String mTitle = mTitleTv.getText().toString();
-                                String mDetail = mDetailTv.getText().toString();
+                                //String mTitle = mTitleTv.getText().toString();
+                                //String mDetail = mContent.getText().toString();
 //                        Drawable mDrawable = mImageTv.getDrawable();
 //                        Bitmap mBitmap = ((BitmapDrawable)mDrawable).getBitmap();
-
-
-                                Intent intent = new Intent(Insight.this, ActivitiesDetail.class);
+                                if (isUser) {
+                                    Intent intent = new Intent(Insight.this, InsightEdit.class);
 //                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
 //                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
 //                        intent.putExtra("image", stream.toByteArray());
-                                intent.putExtra("title", mTitle);
-                                intent.putExtra("detail", mDetail);
-
-                                startActivity(intent);
-
+                                    intent.putExtra("title", mTitleTv.getText().toString());
+                                    intent.putExtra("detail", mContent.getText().toString());
+                                    startActivity(intent);
+                                }
+                                else{
+                                    Intent intent = new Intent(Insight.this, InsightEdit.class);
+//                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//                        intent.putExtra("image", stream.toByteArray());
+                                    intent.putExtra("title", mTitleTv.getText().toString());
+                                    intent.putExtra("description", mDescriptionTv.getText().toString());
+                                    intent.putExtra("content",mContent.getText().toString());
+                                    intent.putExtra("index",String.valueOf(position));
+                                    startActivity(intent);
+                                }
                             }
                         });
                         return viewHolder;

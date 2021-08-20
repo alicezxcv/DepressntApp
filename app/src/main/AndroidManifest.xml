@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HealthyActivitiesEdit"></activity>
+        <activity android:name=".InsightEdit"></activity>
+        <activity android:name=".HealthyActivitiesEdit" />
         <activity android:name=".Insight" />
         <activity android:name=".MedicineView" />
         <activity android:name=".MedicineDetail" />
