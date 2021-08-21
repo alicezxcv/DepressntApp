@@ -138,7 +138,6 @@ public class Schedule extends AppCompatActivity {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Schedule.this, MainActivity2.class));
                 finish();
             }
         });

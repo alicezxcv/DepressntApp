@@ -7,7 +7,8 @@
     android:clipChildren="false"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/title"

@@ -82,7 +82,7 @@ public class DiagnosisResult extends AppCompatActivity {
             // Omae wa mou shindeiru
             else if (points > 19 && points <= 27) {
                 display_result.setText(R.string.diagnosis_result_severe);
-                display_conclude.setText(R.string.diagnosis_result_moderately_severe_conclusion);
+                display_conclude.setText(R.string.diagnosis_result_severe_conclusion);
                 display_advice.setText(R.string.diagnosis_result_high_priority_advice);
             }
         }

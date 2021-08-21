@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple_blue"
+    android:background="@color/white"
     tools:context=".InsightEdit">
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="16dp"
             android:background="@drawable/back_btn"
-            android:backgroundTint="@color/white" />
+            android:backgroundTint="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +40,8 @@
                 android:fontFamily="@font/roboto_medium"
                 android:hint="Post_name"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@null"
                 android:textSize="24sp" />
 
 
@@ -97,37 +98,44 @@
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/updateBtn"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:layout_weight="0"
-                android:background="@color/purple_blue"
-                android:text="Update"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:gravity="center">
 
-            <Button
-                android:id="@+id/deleteBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_weight="0"
-                android:background="@null"
-                android:text="Delete"
-                android:textAllCaps="false"
-                android:textSize="16dp" />
+                <Button
+                    android:id="@+id/updateBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_weight="0"
+                    android:background="@color/purple_blue"
+                    android:text="Update"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+                <Button
+                    android:id="@+id/deleteBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_weight="0"
+                    android:background="@null"
+                    android:text="Delete"
+                    android:textAllCaps="false"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

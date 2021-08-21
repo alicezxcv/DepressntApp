@@ -116,6 +116,7 @@ public class JournalList extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                // startActivity(new Intent(JournalList.this, MainActivity2.class));
+                finish();
             }
         });
     }

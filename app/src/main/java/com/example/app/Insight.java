@@ -5,13 +5,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.app.databinding.ActivityInsightBinding;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,10 +26,12 @@ public class Insight extends AppCompatActivity {
     ImageButton back,add;
     private Boolean isUser = false;
     private FirebaseRecyclerAdapter<Model, ActivitiesViewHolder> firebaseRecyclerAdapter;
+    private ActivityInsightBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insight);
+        binding = ActivityInsightBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         add = findViewById(R.id.addBtn);
         add.bringToFront();
@@ -48,7 +53,15 @@ public class Insight extends AppCompatActivity {
             isUser = true;
             add.setVisibility(View.GONE);
         }
-
+        else
+        {
+            LinearLayout layout = binding.getRoot();
+            layout.setBackgroundColor(getResources().getColor(R.color.white));
+            back.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.black)));
+            binding.title.setTextColor(getResources().getColor(R.color.black));
+            binding.recyclerViewI.setBackgroundColor(getResources().getColor(R.color.white));
+            binding.subtitle.setVisibility(View.GONE);
+        }
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

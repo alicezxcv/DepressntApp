@@ -19,15 +19,6 @@
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".InsightEdit"></activity>
-        <activity android:name=".HealthyActivitiesEdit"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-
-        <activity android:name=".Insight" />
-        <activity android:name=".MedicineView" />
-        <activity android:name=".MedicineDetail" />
-        <activity android:name=".Medicine" />
 
         <!-- LOGIN -->
         <activity android:name=".MainActivity">
@@ -43,8 +34,10 @@
         <activity android:name=".ProfileActivity2" />
 
         <!-- PSYCHIATRIST -->
-        <activity android:name=".PsychiatristDetail" />
         <activity android:name=".Psychiatrist" />
+        <activity android:name=".PsychiatristDetail"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
 
         <!-- WEEKLY QUIZ -->
         <activity android:name=".PHQ9_Quiz" />
@@ -53,6 +46,9 @@
         <!-- ACTIVITIES -->
         <activity android:name=".HealthyActivities" />
         <activity android:name=".ActivitiesDetail" />
+        <activity android:name=".HealthyActivitiesEdit"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
 
         <!-- JOURNAL -->
         <activity android:name=".Journal" />
@@ -74,6 +70,17 @@
         <activity
             android:name=".Chat"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <!-- INSIGHT -->
+        <activity android:name=".Insight" />
+        <activity android:name=".InsightEdit"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <!-- MEDICINE -->
+        <activity android:name=".MedicineView" />
+        <activity android:name=".MedicineDetail" />
+        <activity android:name=".Medicine" />
 
         <!-- MAIN SCREEN -->
         <activity android:name=".MainActivity2" />
