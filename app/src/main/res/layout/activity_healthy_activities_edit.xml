@@ -75,7 +75,7 @@
                 android:layout_weight="0">
 
                 <EditText
-                    android:id="@+id/ContentEt"
+                    android:id="@+id/dDescriptionEt"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginStart="12dp"
@@ -83,14 +83,14 @@
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="16dp"
                     android:layout_weight="0"
-                    android:hint="This is content\nThis is another one"
+                    android:hint="This is description\nThis is another one"
                     android:lineSpacingExtra="2dp"
                     android:scrollbars="vertical"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/dDescriptionEt"
+                    android:id="@+id/ContentEt"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
                     android:layout_marginStart="12dp"
@@ -100,7 +100,7 @@
                     android:layout_weight="0"
                     android:lineSpacingExtra="2dp"
                     android:scrollbars="vertical"
-                    android:hint="This is description\nThis is another one"
+                    android:hint="This is content\nThis is another one"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
