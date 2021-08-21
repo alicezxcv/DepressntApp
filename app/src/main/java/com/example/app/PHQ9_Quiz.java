@@ -135,7 +135,29 @@ public class PHQ9_Quiz extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-       // startActivity(new Intent(PHQ9_Quiz.this, MainActivity.class));
-        finish();
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(PHQ9_Quiz.this);
+        builder1.setMessage("This will cancel your current progress\nDo you want to stop taking the report?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // perform delete entry
+                        //startActivity(new Intent(PHQ9_Quiz.this, MainActivity2.class));
+                        finish();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }
