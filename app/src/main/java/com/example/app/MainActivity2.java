@@ -172,7 +172,30 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         switch (item.getItemId())
         {
             case R.id.nav_chat:
-                startActivity(new Intent(MainActivity2.this, Room.class));
+                //startActivity(new Intent(MainActivity2.this, Room.class));
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setCancelable(true);
+                builder.setTitle("Join chat");
+
+                builder.setMessage("Please Sign in Google account to join chat!");
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                        //startActivity(new Intent(Room.this, MainActivity.class));
+                        //finish();
+                    }
+                });
+                builder.show();
+                //finish();
                 break;
 
             case R.id.nav_help:

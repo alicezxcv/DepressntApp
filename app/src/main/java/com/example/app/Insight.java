@@ -116,7 +116,7 @@ public class Insight extends AppCompatActivity {
 //                        Drawable mDrawable = mImageTv.getDrawable();
 //                        Bitmap mBitmap = ((BitmapDrawable)mDrawable).getBitmap();
                                 if (isUser) {
-                                    Intent intent = new Intent(Insight.this, InsightEdit.class);
+                                    Intent intent = new Intent(Insight.this, ActivitiesDetail.class);
 //                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
 //                        mBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 //                        intent.putExtra("image", stream.toByteArray());
