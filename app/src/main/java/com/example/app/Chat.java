@@ -79,6 +79,9 @@ public class Chat extends AppCompatActivity {
                 {
                     Toast.makeText(Chat.this, "Please enter something", Toast.LENGTH_SHORT).show();
                 }
+                else if (input_msg.getText().toString().length() >= 200){
+                    Toast.makeText(Chat.this, "Your message is too long!", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     Map<String, Object> map = new HashMap<String, Object>();
                     tmp_key = root.push().getKey();

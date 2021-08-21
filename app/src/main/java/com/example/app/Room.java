@@ -114,13 +114,14 @@ public class Room extends AppCompatActivity {
                 intent.putExtra("room_name",((TextView)view).getText().toString());
                 intent.putExtra("user_name",name);
                 startActivity(intent);
+                finish(); // prevent duplicate activity
             }
         });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Room.this, MainActivity.class));
+                //startActivity(new Intent(Room.this, MainActivity.class));
                 finish();
             }
         });
