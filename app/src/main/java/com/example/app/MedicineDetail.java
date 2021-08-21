@@ -21,6 +21,7 @@ public class MedicineDetail extends AppCompatActivity implements View.OnClickLis
 
     String name, overview, interaction, missed, note, overdose, precaution, side, storage, use, warning;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,26 +70,8 @@ public class MedicineDetail extends AppCompatActivity implements View.OnClickLis
         mwarningTv.setOnClickListener((View.OnClickListener) this);
         msideTv.setOnClickListener((View.OnClickListener) this);
 
-//        byte[] bytes = getIntent().getByteArrayExtra("image");
-//        Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-
-
-
-//
         mNameTv.setText(name);
-//        mOverviewTv.setText(overview);
-//        mInteractionTv.setText(interaction);
-//        mMissedTv.setText(missed);
-//        mnoteTv.setText(note);
-//        moverdoseTv.setText(overdose);
-//        mprecautionTv.setText(precaution);
-//        msideTv.setText(side);
-//        mstorageTv.setText(storage);
-//        museTv.setText(use);
-//        mwarningTv.setText(warning);
 
-
-//        mImageIv.setImageBitmap(bmp);
 
 
     }
