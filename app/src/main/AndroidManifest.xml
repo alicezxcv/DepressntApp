@@ -19,14 +19,18 @@
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
 
+        
+       
 
         <!-- LOGIN -->
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <!-- ADMIN -->
@@ -81,11 +85,15 @@
         <activity android:name=".MedicineView" />
         <activity android:name=".MedicineDetail" />
         <activity android:name=".Medicine" />
+        <activity android:name=".MedicineViewEdit"></activity>
+        <activity android:name=".MedicineDetailEdit" />
 
         <!-- MAIN SCREEN -->
         <activity android:name=".MainActivity2" />
 
+
         <!-- FONTS -->
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
