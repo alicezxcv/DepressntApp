@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:clipChildren="false"
     android:orientation="vertical"
-    tools:context=".admin_login">
+    tools:context=".admin_login"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/title"

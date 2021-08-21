@@ -9,11 +9,11 @@
 
 
     <LinearLayout
+        android:id="@+id/linearL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_weight="0"
-        android:id="@+id/linearL"
         android:orientation="horizontal">
 
         <ImageButton
@@ -34,16 +34,29 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/dNameTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto_medium"
-                android:id="@+id/dNameTv"
                 android:text="Name"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Document"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
         </LinearLayout>
     </LinearLayout>
@@ -52,39 +65,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/linearL"
-        android:columnCount="2"
-        android:rowCount="5"
         android:layout_margin="15dp"
+        android:columnCount="2"
+        android:rowCount="5">
 
-        >
         <androidx.cardview.widget.CardView
             android:id="@+id/dWarningTv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_row="0"
-            android:layout_column="0"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Warnings"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -95,30 +105,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="1"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:text="Overview"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -127,32 +134,30 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/dUseTv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_row="1"
-            android:layout_column="0"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="How To Use"
 
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -163,29 +168,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="1"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Side Effects"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -194,31 +197,29 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/dPrecautionsTv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_row="2"
-            android:layout_column="0"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Precautions"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -229,29 +230,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_column="1"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Interactions"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -260,31 +259,29 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/dOverdoseTv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_row="3"
-            android:layout_column="0"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Overdose"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -295,29 +292,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="3"
-            android:layout_column="1"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Missed Dose "
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -326,31 +321,29 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/dStorageTv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_row="4"
-            android:layout_column="0"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Storage "
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -361,42 +354,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="4"
-            android:layout_column="1"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp" >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Notes "
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
 
-
-
-
     </GridLayout>
-
-
-
 
 
 </RelativeLayout>

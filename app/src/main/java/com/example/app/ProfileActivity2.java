@@ -30,6 +30,14 @@ public class ProfileActivity2 extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         checkUser();
 
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseAuth.signOut();
+                checkUser();
+            }
+        });
+
         //handle click, logout
         binding.logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +88,26 @@ public class ProfileActivity2 extends AppCompatActivity {
             }
         });
 
+        // handle click edit healthy activities button
+        binding.editHealthyActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity2.this, HealthyActivities.class);
+                intent.putExtra("type","admin");
+                startActivity(intent);
+            }
+        });
+
+        // handle click edit insight activities button
+        binding.editInsightBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity2.this, Insight.class);
+                intent.putExtra("type","admin");
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void checkUser() {
@@ -101,7 +129,7 @@ public class ProfileActivity2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(ProfileActivity2.this, admin_login.class));
+       // startActivity(new Intent(ProfileActivity2.this, admin_login.class));
         finish();
     }
 }

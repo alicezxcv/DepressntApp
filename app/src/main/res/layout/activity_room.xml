@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Room_name"
+                android:text="Chat"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
@@ -51,7 +51,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="with n other people"
+                android:text="Join the chat with other people online"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="14sp"

@@ -52,7 +52,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Take this"
+                android:text="Contacts your doctor if there are any question"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="14sp"

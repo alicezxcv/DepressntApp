@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                Log.d(TAG, "onClick: begin Google SignIn");
                Intent intent = googleSignInClient.getSignInIntent();
                startActivityForResult(intent,RC_SIGN_IN);// now we need to handle result of intent
-               finish();
+               //finish();
            }
         });
 
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 startActivity(new Intent(MainActivity.this,MainActivity2.class));
-                finish();
+                //finish();
             }
         });
 
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
                         // start profile activity
                         startActivity(new Intent(MainActivity.this ,Room.class));
-                        finish();
+                        //finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

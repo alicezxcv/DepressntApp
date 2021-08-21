@@ -45,9 +45,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
 
         //Button fx
         new ClickShrinkEffect(binding.activitiesBtn);
-        //new ClickShrinkEffect(binding.);  Med info
+        new ClickShrinkEffect(binding.medBtn);
         new ClickShrinkEffect(binding.videoBtn);
-        //new ClickShrinkEffect(binding.);  Insight
+        new ClickShrinkEffect(binding.insightBtn);
         new ClickShrinkEffect(binding.psychiatristBtn);
         new ClickShrinkEffect(binding.scheduleBtn);
         new ClickShrinkEffect(binding.journalBtn);
@@ -63,7 +63,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
                 Intent intent = new Intent(MainActivity2.this,Psychiatrist.class);
                 intent.putExtra("type","user");
                 startActivity(intent);
-                finish();
+
             }
         });
 
@@ -73,7 +73,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             public void onClick(View view) {
                 /// start activity to youtube player
                 startActivity(new Intent(MainActivity2.this, ViewVideo.class));
-                finish();
+
             }
         });
 
@@ -82,20 +82,23 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view) {
                 /// start activity to insight
-                startActivity(new Intent(MainActivity2.this, Insight.class));
+                Intent intent = new Intent(MainActivity2.this, Insight.class);
+                intent.putExtra("type","user");
+                startActivity(intent);
             }
         });
-
 
         // handle click activities image button
         binding.activitiesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /// start activity to healthy activities
-                startActivity(new Intent(MainActivity2.this, HealthyActivities.class));
-
+                Intent intent = new Intent(MainActivity2.this, HealthyActivities.class);
+                intent.putExtra("type","user");
+                startActivity(intent);
             }
         });
+
         // handle click medicine button
         binding.medBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,13 +110,12 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             }
         });
 
-
         // handle click schedule image button
         binding.scheduleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity2.this,Schedule.class));
-                finish();
+
             }
         });
 
@@ -123,7 +125,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             public void onClick(View view){
                 // start journal activity
                 startActivity(new Intent(MainActivity2.this,JournalList.class));
-                finish();
+
             }
         });
 
@@ -133,7 +135,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             public void onClick(View view){
                 // start journal activity
                 startActivity(new Intent(MainActivity2.this, PHQ9_Quiz.class));
-                finish();
+
             }
         });
 
@@ -171,7 +173,6 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         {
             case R.id.nav_chat:
                 startActivity(new Intent(MainActivity2.this, Room.class));
-                finish();
                 break;
 
             case R.id.nav_help:
@@ -227,7 +228,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.cancel();
-                    startActivity(new Intent(MainActivity2.this, MainActivity.class));
+                    //startActivity(new Intent(MainActivity2.this, MainActivity.class));
                     finish();
                 }
             });
@@ -243,7 +244,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         else {
-        startActivity(new Intent(MainActivity2.this, MainActivity.class));
+        //startActivity(new Intent(MainActivity2.this, MainActivity.class));
         finish();
         }
     }
