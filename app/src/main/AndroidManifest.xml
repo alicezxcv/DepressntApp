@@ -85,7 +85,9 @@
         <activity android:name=".MedicineView" />
         <activity android:name=".MedicineDetail" />
         <activity android:name=".Medicine" />
-        <activity android:name=".MedicineViewEdit"></activity>
+        <activity android:name=".MedicineViewEdit"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
         <activity android:name=".MedicineDetailEdit" />
 
         <!-- MAIN SCREEN -->
