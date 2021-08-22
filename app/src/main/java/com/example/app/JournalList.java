@@ -145,7 +145,7 @@ public class JournalList extends AppCompatActivity {
         } catch (FileNotFoundException e) {
             //Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-            Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
         // remove that string at line...
         set.remove(entry);
@@ -165,7 +165,7 @@ public class JournalList extends AppCompatActivity {
                 Toast.makeText(JournalList.this, "Saved", Toast.LENGTH_SHORT).show();
                 loadJournal();
             } catch (Exception e) {
-                Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
         }
         // also delete <entry>.txt...
@@ -200,10 +200,10 @@ public class JournalList extends AppCompatActivity {
             }
 
         } catch (FileNotFoundException e) {
-            Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
-            Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(JournalList.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
         arrayAdapter.notifyDataSetChanged();
     }

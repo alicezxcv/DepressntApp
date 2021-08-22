@@ -111,6 +111,8 @@
             android:background="@drawable/border_radius"
             android:gravity="top"
             android:hint="Write note"
+            android:maxLines="1"
+            android:inputType="text"
             android:paddingStart="16dp"
             android:paddingTop="8dp"
             app:layout_constraintBottom_toTopOf="@id/addNoteButton"

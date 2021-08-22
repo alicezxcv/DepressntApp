@@ -59,13 +59,13 @@ public class Journal extends AppCompatActivity {
         File file = new File(path,entry_title+".txt");
         if (file.exists()) {
             try {
-                FileWriter writer = new FileWriter(file,true);
+                FileWriter writer = new FileWriter(file,false);
                 writer.append(pgraph);
                 writer.flush();
                 writer.close();
                 Toast.makeText(Journal.this, "Saved successfully", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
         }
         else{
@@ -73,7 +73,7 @@ public class Journal extends AppCompatActivity {
                 file.createNewFile();
                 writeJournalToFile(pgraph,entry_title); // call the function itself again
             } catch (IOException e) {
-                Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -91,9 +91,9 @@ public class Journal extends AppCompatActivity {
             }
 
         } catch (FileNotFoundException e) {
-            Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
+           // Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-            Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Journal.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
 
         binding.journalText.setText(sb.toString());
