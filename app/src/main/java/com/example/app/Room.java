@@ -3,6 +3,7 @@ package com.example.app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -165,7 +166,6 @@ public class Room extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                finish();
             }
         });
         dialog.show();
@@ -203,6 +203,7 @@ public class Room extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                finish();
             }
         });
         dialog.show();
