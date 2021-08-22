@@ -182,7 +182,7 @@ public class Schedule extends AppCompatActivity {
             }
 
         } catch (FileNotFoundException e) {
-            Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
@@ -206,7 +206,7 @@ public class Schedule extends AppCompatActivity {
 
             }
         } catch (FileNotFoundException e) {
-                Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
