@@ -79,7 +79,8 @@ public class Chat extends AppCompatActivity {
                 {
                     Toast.makeText(Chat.this, "Please enter something", Toast.LENGTH_SHORT).show();
                 }
-                else if (input_msg.getText().toString().length() >= 200){
+                // cannot let user send such a paragraph.... i think 80 is the perfect maximum
+                else if (input_msg.getText().toString().length() >= 80){
                     Toast.makeText(Chat.this, "Your message is too long!", Toast.LENGTH_SHORT).show();
                 }
                 else {

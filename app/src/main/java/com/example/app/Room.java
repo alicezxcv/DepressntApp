@@ -9,7 +9,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -128,57 +131,88 @@ public class Room extends AppCompatActivity {
     }
 
     private void request_room_name() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(Room.this);
         builder.setCancelable(true);
-        builder.setTitle("Enter room's name:");
-
+        builder.setTitle("Enter room name");
         final EditText input_field = new EditText(this);
         builder.setView(input_field);
 
-        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Ok", null);
+
+        builder.setNegativeButton("Cancel", null);
+
+        AlertDialog dialog = builder.show();
+
+        Button positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positive.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                room_name = input_field.getText().toString();
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put(room_name, "");
-                root.updateChildren(map);
+            public void onClick(View view) {
+                if (isValidName(room_name)){
+                    room_name = input_field.getText().toString();
+                    Map<String, Object> map = new HashMap<String, Object>();
+                    map.put(room_name, "");
+                    root.updateChildren(map);
+                    dialog.dismiss();
+                }
+                else{
+                    Toast.makeText(Room.this, "Invalid room name!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        Button negative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+        negative.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
+            public void onClick(View view) {
+                dialog.dismiss();
             }
         });
-
-        builder.show();
+        dialog.show();
     }
 
     private void request_user_name() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(Room.this);
         builder.setCancelable(false);
         builder.setTitle("Enter name:");
-
         final EditText input_field = new EditText(this);
-
         builder.setView(input_field);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+        builder.setPositiveButton("Ok", null);
+
+        builder.setNegativeButton("Cancel", null);
+
+        AlertDialog dialog = builder.show();
+
+        Button positive = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positive.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(View view) {
                 name = input_field.getText().toString();
+                if (isValidName(name)){
+                    dialog.dismiss();
+                }
+                else{
+                    Toast.makeText(Room.this, "Invalid username!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        Button negative = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+        negative.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-                //startActivity(new Intent(Room.this, MainActivity.class));
-                finish();
+            public void onClick(View view) {
+                dialog.dismiss();
             }
         });
-        builder.show();
+        dialog.show();
+    }
+
+
+    private boolean isValidName(String name){
+        if (name.isEmpty()|| name.trim().isEmpty() || name.toLowerCase().equals("admin")){
+            return false;
+        }
+        return true;
     }
 
     @Override
