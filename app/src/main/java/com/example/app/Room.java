@@ -165,6 +165,7 @@ public class Room extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                finish();
             }
         });
         dialog.show();
