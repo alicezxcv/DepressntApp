@@ -65,11 +65,11 @@ public class Schedule extends AppCompatActivity {
                 if (binding.noteEditText.getText().toString().equals("") == false) {
                     // remove old event first to prevent duplicate
                     binding.compactcalendarView.removeEvents(selectedDate.getTime());
-
                     Event ev = new Event(Color.BLACK, selectedDate.getTime(), binding.noteEditText.getText().toString());
                     binding.compactcalendarView.addEvent(ev);
                     /// save event on file
                     // Toast.makeText(Schedule.this,simpleDatev2.format(selectedDate) , Toast.LENGTH_SHORT).show();
+                    deleteEvent(simpleDatev2.format(selectedDate));
                     writeEventToFile(simpleDatev2.format(selectedDate), binding.noteEditText.getText().toString());
                     Toast.makeText(Schedule.this, "Saved", Toast.LENGTH_SHORT).show();
                 }
@@ -123,7 +123,7 @@ public class Schedule extends AppCompatActivity {
                 List<Event> events = binding.compactcalendarView.getEvents(dateClicked);
                 String note = "";
                 for (Event e : events){
-                    note += e.getData().toString() + "\n";
+                    note += e.getData().toString() + ".";
                 }
                 binding.noteEditText.setText(note);
             }
@@ -161,7 +161,7 @@ public class Schedule extends AppCompatActivity {
                 file.createNewFile();
                 writeEventToFile(date,note); // call the function itself again
             } catch (IOException e) {
-                Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -184,7 +184,7 @@ public class Schedule extends AppCompatActivity {
         } catch (FileNotFoundException e) {
           //  Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-            Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -208,7 +208,7 @@ public class Schedule extends AppCompatActivity {
         } catch (FileNotFoundException e) {
                 //Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
             }
         // rewrite data back to file
         // empty file first
@@ -218,7 +218,7 @@ public class Schedule extends AppCompatActivity {
             writer.append("");
             writer.close();
         } catch (IOException e) {
-            Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Schedule.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
 
 

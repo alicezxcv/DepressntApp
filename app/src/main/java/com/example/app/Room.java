@@ -147,8 +147,8 @@ public class Room extends AppCompatActivity {
         positive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                room_name = input_field.getText().toString();
                 if (isValidName(room_name)){
-                    room_name = input_field.getText().toString();
                     Map<String, Object> map = new HashMap<String, Object>();
                     map.put(room_name, "");
                     root.updateChildren(map);
