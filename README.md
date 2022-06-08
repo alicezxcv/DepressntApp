@@ -1,4 +1,4 @@
-# Calculator App
+# Depressnt App
 A mobile application for depressed people. 
 
 ## Demo
